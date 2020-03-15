@@ -13,15 +13,15 @@ const routes: Routes = [{
   path: '',
   component: ListingComponent,
   data: {
-    title: 'Request Payout manager',
-    urls: [{ title: 'Requests Payout', url: '/requestPayout' }]
+    title: 'Manager de cereri de plata',
+    urls: [{ title: 'Cereri de plata', url: '/requestPayout' }]
   }
 }, {
   path: 'create',
   component: CreateRequestPayoutComponent,
   data: {
-    title: 'New Request',
-    urls: [{ title: 'Requests Payout', url: '/requestPayout' }, { title: 'New Request' }]
+    title: 'Cerere noua',
+    urls: [{ title: 'Cereri de plata', url: '/requestPayout' }, { title: 'Cerere noua' }]
   }
 }];
 

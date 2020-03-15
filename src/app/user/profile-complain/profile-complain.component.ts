@@ -15,13 +15,13 @@ export class ProfileComplainComponent implements OnInit {
   }
   submit() {
     if (this.content === '') {
-      return this.toasty.error('Please leave some text in the complain box');
+      return this.toasty.error('Va rugam introduceti textul in casuta pentru plangere.');
     }
 
     this.userService.complain({ content: this.content }).then((res) => {
-      this.toasty.success('Complain has been sent!');
+      this.toasty.success('Plangerea a fost trimisa!');
     }).catch((err) => {
-      this.toasty.error('Something went wrong, please check and try again!');
+      this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
     })
     this.activeModal.close();
   }

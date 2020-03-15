@@ -39,14 +39,14 @@ export class ListingComponent implements OnInit {
 
   changeUTCDate() {
     if (this.dateFilter.startDate !== '' && this.dateFilter.toDate !== '') {
-      let startUTCDate = new moment().utcOffset(0);
+      const startUTCDate = new moment().utcOffset(0);
       startUTCDate
         .year(this.dateFilter.startDate.year)
         .month(this.dateFilter.startDate.month - 1)
         .date(this.dateFilter.startDate.day);
       this.dateFilter.startDate = startUTCDate.startOf('day').toISOString();
 
-      let toUTCDate = new moment().utcOffset(0);
+      const toUTCDate = new moment().utcOffset(0);
       toUTCDate
         .year(this.dateFilter.toDate.year)
         .month(this.dateFilter.toDate.month - 1)
@@ -61,7 +61,7 @@ export class ListingComponent implements OnInit {
 
   query() {
     if (this.changeUTCDate() === 0) {
-      return this.toasty.error('Start date must be less than end date!');
+      return this.toasty.error('Data de inceput trebuie sa fie mai mica decat data de sfarsit!');
     }
 
     const params = Object.assign({
@@ -76,7 +76,7 @@ export class ListingComponent implements OnInit {
     this.orderService.find(params).then((res) => {
       this.orders = res.data.items;
       this.total = res.data.count;
-    }).catch(() => this.toasty.error('Something went wrong, please try again!'));
+    }).catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   sortBy(field: string, type: string) {
@@ -87,10 +87,10 @@ export class ListingComponent implements OnInit {
 
   exportCSV() {
     if (this.changeUTCDate() == 0) {
-      return this.toasty.error('Start date must be less than end date!');
+      return this.toasty.error('Data de inceput trebuie sa fie mai mica decat data de sfarsit!');
     }
 
-    let params = {
+    const params = {
       sort: `${this.sortOption.sortBy}`,
       sortType: `${this.sortOption.sortType}`,
       startDate: this.dateFilter.startDate,
@@ -100,7 +100,7 @@ export class ListingComponent implements OnInit {
 
     this.orderService.export(params).then()
       .catch((err) => {
-        let link = document.createElement('a');
+        const link = document.createElement('a');
         link.target = '_blank';
         link.download = 'file';
         link.href = err.url;

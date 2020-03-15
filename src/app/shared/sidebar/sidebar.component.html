@@ -36,13 +36,13 @@
     <li class="user-profile" [class.active]="showMenu === 'user'">
       <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" (click)="addExpandClass('user')"
         aria-expanded="false">
-        <i class="fa fa-user"></i><span class="hide-menu">My profile </span>
+        <i class="fa fa-user"></i><span class="hide-menu">Profilul meu </span>
       </a>
       <ul aria-expanded="false" class="collapse" [class.in]="showMenu === 'user'">
-        <li><a routerLink="/users/profile/update">My Profile </a></li>
-        <li><a routerLink="/shops/update">My Shop </a></li>
-        <!-- <li><a [routerLink]="['/packages']">Upgrade Featured Shop </a></li> -->
-        <li><a href="javascript:void()" (click)="logout()">Logout</a></li>
+        <li><a routerLink="/users/profile/update">Profilul meu </a></li>
+        <li><a routerLink="/shops/update">Magazinul meu </a></li>
+        <!-- <li><a [routerLink]="['/packages']">Upgrade Featured magazin </a></li> -->
+        <li><a href="javascript:void()" (click)="logout()">Deconectare</a></li>
       </ul>
     </li>
   </ul>

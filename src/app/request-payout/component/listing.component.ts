@@ -53,7 +53,7 @@ export class ListingComponent implements OnInit {
         this.isLoading = false;
       })
       .catch(() => {
-        this.toasty.error('Something went wrong, please try again!');
+        this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
         this.utilService.setLoading(false);
         this.isLoading = false;
       });
@@ -73,7 +73,7 @@ export class ListingComponent implements OnInit {
 
   queryStats() {
     if (this.changeUTCDate() === 0) {
-      return this.toasty.error('Start date must be less than end date!');
+      return this.toasty.error('Data de inceput trebuie sa fie mai mica decat data de sfarsit!');
     }
     const params = {
       startDate: this.dateFilter.startDate,
@@ -90,5 +90,4 @@ export class ListingComponent implements OnInit {
     this.sortOption.sortType = type;
     this.query();
   }
-
 }

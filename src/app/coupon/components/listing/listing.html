@@ -4,53 +4,53 @@
       <thead>
         <tr>
           <th>
-            <a (click)="sortBy('name', 'desc')">Name&nbsp;</a>
+            <a (click)="sortBy('name', 'desc')">Nume&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='name'">
               <a (click)="sortBy('name', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('name', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('code', 'desc')">Code&nbsp;</a>
+            <a (click)="sortBy('code', 'desc')">Cod&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='code'">
               <a (click)="sortBy('code', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('code', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('discountPercentage', 'desc')">Discount Percentage&nbsp;</a>
+            <a (click)="sortBy('discountPercentage', 'desc')">Procentaj discount&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='discountPercentage'">
               <a (click)="sortBy('discountPercentage', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('discountPercentage', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('limit', 'desc')">Limit&nbsp;</a>
+            <a (click)="sortBy('limit', 'desc')">Limită&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='limit'">
               <a (click)="sortBy('limit', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('limit', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('expiredTime', 'desc')">Expired Time&nbsp;</a>
+            <a (click)="sortBy('expiredTime', 'desc')">Valabilitate&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='expiredTime'">
               <a (click)="sortBy('expiredTime', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('expiredTime', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('createdAt', 'desc')">Created At&nbsp;</a>
+            <a (click)="sortBy('createdAt', 'desc')">Creat pe&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='createdAt'">
               <a (click)="sortBy('createdAt', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('createdAt', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
-          <th>Action</th>
+          <th>Acțiune</th>
         </tr>
         <tr>
           <th>
             <div class="input-group">
-              <input class="form-control" [(ngModel)]="searchText" placeholder="search..." (keypress)="keyPress($event)" />
+              <input class="form-control" [(ngModel)]="searchText" placeholder="Caută..." (keypress)="keyPress($event)" />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary fa fa-search" (click)="query()" type="button"></button>
               </div>
@@ -63,7 +63,7 @@
       <tbody>
         <tr *ngIf="!total">
           <td colspan="7">
-            <p class="text-center text-danger">There is no items yet..</p>
+            <p class="text-center text-danger">Nu există date..</p>
           </td>
         </tr>
         <tr *ngFor="let item of coupons, let i = index">
@@ -76,7 +76,7 @@
           <td>{{item?.discountPercentage}}%</td>
           <td *ngIf="item.limit !== 0">{{item?.limit}}</td>
           <td *ngIf="item.limit === 0">
-            <span class="badge badge-danger">Unlimited</span>
+            <span class="badge badge-danger">Nelimitat</span>
           </td>
           <td>{{item.expiredTime |date:'short'}}</td>
           <td>

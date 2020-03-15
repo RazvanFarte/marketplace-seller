@@ -26,7 +26,7 @@ export class StarterComponent implements OnInit {
     this.shopService.me().then((res) => {
       this.shop = res.data;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
 
     this.messageService.latest({
       take: 4
@@ -37,16 +37,16 @@ export class StarterComponent implements OnInit {
     this.statService.orderStat().then(resp => {
       this.orderStat = resp.data;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
 
     this.statService.prodStat().then(resp => {
       this.productStat = resp.data;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
 
     this.statService.saleStat().then(resp => {
       this.saleStat = resp.data;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 }

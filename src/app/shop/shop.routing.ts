@@ -6,8 +6,8 @@ const routes: Routes = [
   {
     path: 'update', component: ShopUpdateComponent,
     data: {
-      title: 'Shop Update',
-      urls: [{ title: 'Profile Update' }]
+      title: 'Editarea Magazinului',
+      urls: [{ title: 'Editarea Magazinului' }]
     }
   }
 ];

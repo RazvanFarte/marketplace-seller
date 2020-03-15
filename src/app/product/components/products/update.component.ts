@@ -96,15 +96,15 @@ export class ProductUpdateComponent implements OnInit {
   submit(frm) {
     this.isSubmitted = true;
     if (frm.$invalid) {
-      this.toasty.error('Invalid form, please try again.');
+      return this.toasty.error('Formularul este invalid, va rugam incercati din nou.');
     }
 
     if (this.product.salePrice > this.product.price || this.product.salePrice < 0.1 || this.product.price < 0.1) {
-      return this.toasty.error('Price or sale price is invalid.');
+      return this.toasty.error('Pretul sau pretul de vanzare este invalid.');
     }
 
     if (this.product.taxPercentage < 0) {
-      return this.toasty.error('Tax value is invalid.');
+      return this.toasty.error('Valoarea taxei este invalida.');
     }
 
     if (this.product.dailyDeal && this.dealDate) {
@@ -112,7 +112,7 @@ export class ProductUpdateComponent implements OnInit {
     }
 
     if (this.product.type === 'digital' && !this.product.digitalFileId) {
-      return this.toasty.error('Please select Digital file path!');
+      return this.toasty.error('Va rugam selectati calea unui fisier digital!');
     }
 
     this.product.restrictFreeShipAreas = [];
@@ -126,12 +126,12 @@ export class ProductUpdateComponent implements OnInit {
       this.toasty.success('Updated successfully.');
       this.router.navigate(['/products/list']);
     })
-      .catch(err => this.toasty.error(err.data.message || err.data.data.message || 'Something went wrong, please try again.'))
+      .catch(err => this.toasty.error(err.data.message || err.data.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   addSpecification() {
     if (!this.newSpecification.value.trim()) {
-      return this.toasty.error('Please enter specification value');
+      return this.toasty.error('Va rugam sa introduceti valoarea specificatiei!');
     }
     this.product.specifications.push(this.newSpecification);
     this.newSpecification = { key: '', value: '' };
@@ -139,7 +139,7 @@ export class ProductUpdateComponent implements OnInit {
 
   selectImage(media: any) {
     if (media.type !== 'photo') {
-      return this.toasty.error('Please select image!');
+      return this.toasty.error('Va rugam sa selectati o imagine!');
     }
 
     this.images.push(media);

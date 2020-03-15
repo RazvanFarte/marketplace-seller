@@ -37,7 +37,7 @@ export class CouponsComponent implements OnInit {
   query() {
     this.utilService.setLoading(true);
     this.isLoading = true;
-    let params = {
+    const params = {
       page: this.page,
       take: this.take,
       sort: `${this.sortOption.sortBy}`,
@@ -51,7 +51,7 @@ export class CouponsComponent implements OnInit {
       this.utilService.setLoading(false);
       this.isLoading = false;
     }).catch((err) => {
-      this.toasty.error(err.data.message || 'Something went wrong, please try again!');
+      this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!';
       this.utilService.setLoading(false);
       this.isLoading = false;
     });
@@ -70,13 +70,13 @@ export class CouponsComponent implements OnInit {
   }
 
   remove(itemId: any, index: number) {
-    if (window.confirm('Are you sure want to delete this item?')) {
+    if (window.confirm('Sunteti sigur ca vreti sa stergeti acest item?')) {
       this.couponService.remove(itemId)
         .then(() => {
-          this.toasty.success('Item has been deleted!');
+          this.toasty.success('Item-ul a fost sters!');
           this.coupons.splice(index, 1);
         })
-        .catch((err) => this.toasty.error(err.data.message || 'Something went wrong, please try again!'));
+        .catch((err) => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
     }
   }
 }

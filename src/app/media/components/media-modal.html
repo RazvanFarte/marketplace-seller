@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Media manager</h4>
+  <h4 class="modal-title">Administrare media</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -7,10 +7,10 @@
 <div class="modal-body">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'library'}" (click)="changeTab('library')">Library</a>
+      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'library'}" (click)="changeTab('library')">Bibliotecă media</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'upload'}" (click)="changeTab('upload')">Upload</a>
+      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'upload'}" (click)="changeTab('upload')">Încărcare media</a>
     </li>
   </ul>
   <div class="row" *ngIf="tab === 'library'">
@@ -19,20 +19,20 @@
         <thead>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Nume</th>
+            <th>Descriere</th>
             <th>#</th>
           </tr>
           <tr>
             <th></th>
             <th>
-              <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="keyword.name" name="keyword" />
+              <input type="text" class="form-control" placeholder="Introdu nume" [(ngModel)]="keyword.name" name="keyword" />
             </th>
             <th>
-              <input type="text" class="form-control" placeholder="Enter description" [(ngModel)]="keyword.description" name="desc" />
+              <input type="text" class="form-control" placeholder="Introdu descriere" [(ngModel)]="keyword.description" name="desc" />
             </th>
             <th>
-              <button class="btn btn-outline-secondary" type="submit" (click)="search()">Search</button>
+              <button class="btn btn-outline-secondary" type="submit" (click)="search()">Caută</button>
             </th>
           </tr>
         </thead>
@@ -64,23 +64,22 @@
           <media-preview [media]="activeEditMedia"></media-preview>
         </div>
         <div class="form-group">
-          <label>URL</label>
+          <label>Legătură</label>
           <input type="text" class="form-control" [ngModel]="activeEditMedia.fileUrl" disabled name="url" />
         </div>
         <div class="form-group">
-          <label>File name (*)</label>
-          <input type="text" class="form-control" placeholder="Enter media name" [(ngModel)]="activeEditMedia.name" required #name="ngModel" name="name" />
+          <label>Nume fișier (*)</label>
+          <input type="text" class="form-control" placeholder="Introdu nume fișier media" [(ngModel)]="activeEditMedia.name" required #name="ngModel" name="name" />
           <div *ngIf="name.errors && (name.dirty || name.touched || submitted)">
             <p [hidden]="!name.errors.required" class="error">
-              File name is required
+              Nume fișier obligatoriu
             </p>
           </div>
         </div>
         <div class="form-group">
-          <label>File description</label>
-          <textarea class="form-control" placeholder="Enter description" [(ngModel)]="activeEditMedia.description" #desc="ngModel" name="desc"></textarea>
+          <textarea class="form-control" placeholder="Introdu descriere" [(ngModel)]="activeEditMedia.description" #desc="ngModel" name="desc"></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-dark pull-right">Update</button>
+        <button type="submit" class="btn btn-outline-dark pull-right">Actualizează</button>
       </form>
     </div>
   </div>
@@ -97,8 +96,8 @@
         <thead>
           <tr>
             <th></th>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Nume</th>
+            <th>Descriere</th>
             <th>#</th>
           </tr>
         </thead>
@@ -110,7 +109,7 @@
             <td>{{media?.name}}</td>
             <td>{{media?.description}}</td>
             <td>
-              <span class="pointer" (click)="select(media)">Select</span>
+              <span class="pointer" (click)="select(media)">Selectează</span>
             </td>
           </tr>
           <tr *ngFor="let file of filesQueue">
@@ -141,5 +140,5 @@
   </div>
 </div>
 <div class="modal-footer" *ngIf="activeEditMedia">
-  <button type="button" class="btn btn-primary" (click)="select(activeEditMedia)">Select</button>
+  <button type="button" class="btn btn-primary" (click)="select(activeEditMedia)">Selectează</button>
 </div>

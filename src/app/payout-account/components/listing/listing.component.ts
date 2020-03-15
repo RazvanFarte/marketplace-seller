@@ -3,7 +3,6 @@ import { AccountService } from '../../services/account.service';
 import { UtilService } from '../../../shared/services';
 import { Router } from '@angular/router';
 import { ToastyService } from 'ng2-toasty';
-import { Subscription } from 'rxjs/Subscription';
 import * as _ from 'lodash';
 
 @Component({
@@ -23,7 +22,6 @@ export class AccountsComponent implements OnInit {
     sortType: 'desc'
   };
 
-
   constructor(
     private router: Router,
     private accountService: AccountService,
@@ -38,7 +36,7 @@ export class AccountsComponent implements OnInit {
   query() {
     this.utilService.setLoading(true);
     this.isLoading = true;
-    let params = {
+    const params = {
       page: this.page,
       take: this.take,
       sort: `${this.sortOption.sortBy}`,
@@ -52,7 +50,7 @@ export class AccountsComponent implements OnInit {
       this.utilService.setLoading(false);
       this.isLoading = false;
     }).catch(() => {
-      this.toasty.error('Something went wrong, please try again!');
+      this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
       this.utilService.setLoading(false);
       this.isLoading = false;
     });
@@ -71,13 +69,13 @@ export class AccountsComponent implements OnInit {
   }
 
   remove(itemId: any, index: number) {
-    if (window.confirm('Are you sure want to delete this item?')) {
+    if (window.confirm('Sunteti sigur ca vreti sa stergeti acest item?')) {
       this.accountService.remove(itemId)
         .then(() => {
-          this.toasty.success('Item has been deleted!');
+          this.toasty.success('Item-ul a fost sters!');
           this.accounts.splice(index, 1);
         })
-        .catch((err) => this.toasty.error(err.data.message || 'Something went wrong, please try again!'));
+        .catch((err) => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
     }
   }
 }

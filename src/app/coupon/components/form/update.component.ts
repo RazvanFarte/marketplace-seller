@@ -22,7 +22,7 @@ export class CouponUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
 
     this.couponService.findOne(id).then(resp => {
       this.coupon = resp.data;
@@ -35,31 +35,33 @@ export class CouponUpdateComponent implements OnInit {
   submit(frm) {
     this.isSubmitted = true;
     if (frm.$invalid) {
-      this.toasty.error('Invalid form, please try again.');
+      return this.toasty.error('Formularul este invalid, va rugam incercati din nou.');
     }
 
     if (this.coupon.discountPercentage < 0 || this.coupon.discountPercentage > 100) {
-      return this.toasty.error('Discount percentage ranges from 0 to 100');
+      return this.toasty.error('Reducerea trebuie sa fie intre 0 si 100');
     }
 
     if (this.coupon.limit < 0) {
-      return this.toasty.error('Limit can not enter negative');
+      return this.toasty.error('Limita nu poate fi negativa');
     }
 
     if (this.date) {
       this.coupon.expiredTime = new Date(this.date.year, this.date.month - 1, this.date.day).toUTCString();
-    } else return this.toasty.error('Please select experied time!');
+    } else {
+      return this.toasty.error('Va rugam selectati data de expirare!');
+    }
 
-    let param = {
+    const param = {
       name: this.coupon.name,
       code: this.coupon.code,
       discountPercentage: this.coupon.discountPercentage,
       limit: this.coupon.limit,
       expiredTime: this.coupon.expiredTime
-    }
+    };
 
     this.couponService.update(this.coupon._id, param).then(resp => {
-      this.toasty.success('Updated successfully.');
-    })
+      this.toasty.success('Editarea a fost efectuata cu succes.');
+    });
   }
 }

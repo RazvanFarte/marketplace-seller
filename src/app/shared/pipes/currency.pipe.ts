@@ -9,7 +9,7 @@ import { SystemService } from '../services';
 })
 export class CurrencyPipe implements PipeTransform {
   private result: any = '0.00';
-  private symbol:any = '$';
+  private symbol: any = '$';
   constructor(private systemService: SystemService) {
     this.systemService.configs().then(resp => {
       this.symbol = resp.customerCurrencySymbol;

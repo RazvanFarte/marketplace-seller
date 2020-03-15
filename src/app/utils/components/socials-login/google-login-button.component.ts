@@ -23,10 +23,10 @@ export class GoogleLoginButtonComponent {
       .then((resp) => {
         this.Auth.connectGoogle(resp.authToken)
           .then(() => {
-            this.toasty.success('Your Google account has been connected!');
+            this.toasty.success('Contul dumneavoastra de Google a fost conectat!');
             this.onConnected.emit({ platform: 'google', success: true }), () => (null);
           })
       })
-      .catch(err => this.toasty.error(this.translate.instant('Something went wrong, please try again.')));
+      .catch(err => this.toasty.error(this.translate.instant('Ceva nu a mers, va rugam sa incercati din nou!')));
   }
 }

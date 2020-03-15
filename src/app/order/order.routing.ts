@@ -8,16 +8,16 @@ const routes: Routes = [
     path: 'list',
     component: ListingComponent,
     data: {
-      title: 'Order manager',
-      urls: [{ title: 'Orders', url: '/orders/list' }]
+      title: 'Manager de comenzi',
+      urls: [{ title: 'Comenzi', url: '/orders/list' }]
     }
   },
   {
     path: 'view/:id',
     component: ViewComponent,
     data: {
-      title: 'Order manager',
-      urls: [{ title: 'Orders', url: '/orders/list' }, { title: 'Detail', url: ' / orders / view /: id' }]
+      title: 'Manager de comenzi',
+      urls: [{ title: 'Comenzi', url: '/orders/list' }, { title: 'Detalii', url: '/orders/view/:id' }]
     }
   }
 ];

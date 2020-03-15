@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../../services/package.service';
 import { UtilService } from '../../../shared/services';
 import { ToastyService } from 'ng2-toasty';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'payment-history',
@@ -40,7 +39,7 @@ export class PaymentHistoryComponent implements OnInit {
       this.utilService.setLoading(false);
       this.isLoading = false;
     }).catch(() => {
-      this.toasty.error('Something went wrong, please try again!');
+      this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
       this.utilService.setLoading(false);
       this.isLoading = false;
     });

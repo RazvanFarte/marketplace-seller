@@ -23,10 +23,10 @@ export class FacebookLoginButtonComponent {
       .then((resp) => {
         this.Auth.connectFacebook(resp.authToken)
           .then(() => {
-            this.toasty.success('Your Facebook account has been connected!');
+            this.toasty.success('Contul dumneavoastra de Facebook a fost conectat!');
             this.onConnected.emit({ platform: 'facebook', success: true }), () => (null);
           })
       })
-      .catch(err => this.toasty.error(this.translate.instant('Something went wrong, please try again.')));
+      .catch(err => this.toasty.error(this.translate.instant('Ceva nu a mers, va rugam sa incercati din nou!')));
   }
 }

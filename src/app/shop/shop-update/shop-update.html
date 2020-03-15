@@ -3,28 +3,28 @@
     <div class="card">
       <div class="card-body">
         <div class="nav flex-column nav-pills">
-          <a class="nav-link active" [ngClass]="{active: tab == 'basic'}" (click)="changeTab('basic')">Basic Info</a>
+          <a class="nav-link active" [ngClass]="{active: tab == 'basic'}" (click)="changeTab('basic')">Informații de bază</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'business'}" (click)="changeTab('business')">Business Info</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'business'}" (click)="changeTab('business')">Informații afacere</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'social'}" (click)="changeTab('social')">Social Info</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'social'}" (click)="changeTab('social')">Informații social media </a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'shipping'}" (click)="changeTab('shipping')">Shipping Info</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'shipping'}" (click)="changeTab('shipping')">Informații livrare</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'notification'}" (click)="changeTab('notification')">Notification Info</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'notification'}" (click)="changeTab('notification')">Informații notificări</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'bank'}" (click)="changeTab('bank')">Bank Info</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'bank'}" (click)="changeTab('bank')">Informații bancă</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'review'}" (click)="changeTab('review')">Reviews From User</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'review'}" (click)="changeTab('review')">Recenzii de la utilizator</a>
         </div>
 
         <hr />
 
-        <h3>Verify your social account</h3>
+        <h3>Verifică cont</h3>
         <p>
-          <strong>Facebook: </strong> {{socialConnected?.facebook ? 'Verified' : 'Not verified'}} <br />
-          <strong>Google: </strong> {{socialConnected?.google ? 'Verified' : 'Not verified'}} <br />
-          <strong>Twitter: </strong> {{socialConnected?.twitter ? 'Verified' : 'Not verified'}}
+          <strong>Facebook: </strong> {{socialConnected?.facebook ? 'Verificat' : 'Nu a fost verificat'}} <br />
+          <strong>Google: </strong> {{socialConnected?.google ? 'Verificat' : 'Nu a fost verificat'}} <br />
+          <strong>Twitter: </strong> {{socialConnected?.twitter ? 'Verificat' : 'Nu a fost verificat'}}
         </p>
         <hr />
         <div class="form-group text-center socials-box">

@@ -4,24 +4,24 @@
   </div>
   <div class="card-body">
     <form class="form-horizontal form-material">
-      <h3 class="box-title m-b-20">Sign In</h3>
+      <h3 class="box-title m-b-20">Autentifică</h3>
       <div class="form-group">
           <div class="col-xs-12">
-              <input class="form-control" placeholder="Email" required type="email" autocomplete="off" name="email"
+              <input class="form-control" placeholder="Adresa de email" required type="email" autocomplete="off" name="email"
               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="credentials.email" #email="ngModel" />
             <div *ngIf="email.errors && (email.dirty || email.touched)">
               <p [hidden]="!email.errors.required" class="error">
-                Email is required
+                Introduceti email-ul.
               </p>
               <p [hidden]="!email.errors.pattern" class="error">
-                Email is invalid email address.
+                Adresa de email este invalida.
               </p>
             </div>
           </div>
       </div>
       <div class="form-group ">
         <div class="col-xs-12">
-          <input class="form-control" placeholder="Password" required type="password" autocomplete="off" name="pw" [(ngModel)]="credentials.password" />
+          <input class="form-control" placeholder="Parola" required type="password" autocomplete="off" name="pw" [(ngModel)]="credentials.password" />
         </div>
       </div>
       <div class="form-group text-center m-t-20">
@@ -32,9 +32,9 @@
       <div class="form-group row">
         <div class="col-md-12 font-14">
           <span class="text-dark pull-right">
-            <a routerLink="/auth/forgot"> Forgot password?</a>
-            Or
-            <a routerLink="/auth/register"> Register?</a>
+            <a routerLink="/auth/forgot"> Ai uitat parola?</a>
+            Sau
+            <a routerLink="/auth/register"> Inregistrare</a>
           </span>
         </div>
       </div>

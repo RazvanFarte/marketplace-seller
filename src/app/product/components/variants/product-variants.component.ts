@@ -24,21 +24,21 @@ export class VariantUpdateModalComponent implements OnInit {
   update(frm: any) {
     // TODO  - validate
     if (frm.$invalid) {
-      return this.toasty.error('Something went wrong, please try again.');
+      return this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
     }
 
     if (this.item.price < this.item.salePrice || !this.item.price || !this.item.salePrice) {
-      return this.toasty.error('Invalid price!');
+      return this.toasty.error('Pret invalid!');
     }
     
     if (this.item.stockQuantity < 0) {
-      return this.toasty.error('Invalid stock quantity!');
+      return this.toasty.error('Cantitatea stocului este invalida!');
     }
     const data = _.pick(this.item, ['price', 'salePrice', 'stockQuantity', 'digitalFileId', 'options']);
     this.variantService.update(this.product._id, this.variant._id, data)
       .then((resp) => {
         // TODO - close me
-        this.toasty.success('Updated successfully.');
+        this.toasty.success('Editarea a fost efectuata cu succes.');
         this.activeModal.close(data);
       });
   }
@@ -99,7 +99,7 @@ export class ProductVariantsComponent implements OnInit {
 
   addNewOption(item) {
     if (!this.newOption.key && !this.newOption.displayText && !this.newOption.value) {
-      return this.toasty.error('Please enter option');
+      return this.toasty.error('Va rugam introduceti optiunea');
     }
     this.newOption.optionKey = item.options[0].optionKey;
     delete item.options[0].isNew;
@@ -108,21 +108,21 @@ export class ProductVariantsComponent implements OnInit {
     this.variantService.update(this.product._id, item._id, item)
       .then(resp => {
         this.newOption = {};
-        this.toasty.success('Added new option successfully.');
+        this.toasty.success('Noua optiune a fost adaugata cu succes.');
       })
-      .catch(err => this.toasty.error(err.data.message || 'Something went wrong, please try again.'));
+      .catch(err => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   removeOption(item, i) {
     if (item.options.length === 1) {
-      return this.toasty.error('Options length must be at least 1.');
+      return this.toasty.error('Lungimea optiunii trebuie sa fie mai mare ca 1.');
     }
-    if (window.confirm('Are you you to remove this option?')) {
+    if (window.confirm('Sunteti sigur ca vreti sa stergeti aceasta optiune?')) {
       item.options.splice(i, 1);
       this.variantService.update(this.product._id, item._id, item).then((resp) => {
-        this.toasty.success('Removed option successfully.');
+        this.toasty.success('Optiunea a fost stearsa cu succes.');
       })
-        .catch(err => this.toasty.error(err.data.data.message || 'Something went wrong, please try again.'));
+        .catch(err => this.toasty.error(err.data.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
     }
   }
 
@@ -153,19 +153,19 @@ export class ProductVariantsComponent implements OnInit {
 
   create() {
     if (!this.newVariant.price || this.newVariant.price < 0) {
-      return this.toasty.error('Price value is invalid.');
+      return this.toasty.error('Valuarea pretului este invalida.');
     }
 
     if (!this.newVariant.salePrice || this.newVariant.salePrice < 0) {
-      return this.toasty.error('Sale price value is invalid.');
+      return this.toasty.error('Valoare pretului de vanzare este invalida.');
     }
 
     if (!this.newVariant.stockQuantity || this.newVariant.stockQuantity < 0) {
-      return this.toasty.error('Stock quantity value is invalid.');
+      return this.toasty.error('Valoarea cantitatii stocului este ivnalida.');
     }
 
     if (!this.newVariant.options[0].key || !this.newVariant.options[0].displayText || !this.newVariant.options[0].value) {
-      return this.toasty.error('Please fill out all fields.');
+      return this.toasty.error('Va rugam introduceti toate datele.');
     }
 
     this.newVariant.options[0].optionKey = this.newVariant.options[0].key;
@@ -174,17 +174,17 @@ export class ProductVariantsComponent implements OnInit {
         // TODO - push media item?
         this.items.unshift(resp.data);
         this.newVariant.options[0] = {};
-        this.toasty.success('Added new variant successfully.');
+        this.toasty.success('Varianta a fost adaugata cu succes.');
       })
       .catch(err => this.toasty.error(err.data.message));
 
   }
 
   remove(variantId: string, index) {
-    if (window.confirm('Are you you to remove this variant?')) {
+    if (window.confirm('Sunteti sigur ca doriti sa stergeti aceasta varianta?')) {
       this.variantService.remove(this.product._id, variantId).then((resp) => {
         this.items.splice(index, 1);
-        this.toasty.success('Removed item successfully.')
+        this.toasty.success('Item-ul a fost sters cu succes.');
       })
         .catch(err => this.toasty.error(err.data.data.message));
     }

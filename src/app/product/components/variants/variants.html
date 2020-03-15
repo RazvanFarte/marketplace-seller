@@ -4,23 +4,23 @@
       <tr>
         <th colspan="3">
           <div class="row">
-            <div class="col col-md-2">Key</div>
-            <div class="col col-md-4">Display Text
-              <br><small class="text-muted">Name of variant</small>
+            <div class="col col-md-2">Cheie</div>
+            <div class="col col-md-4">Text afișaz
+              <br><small class="text-muted">Nume variantă produs</small>
             </div>
             <div class="col col-md-4">
-              Value
+              Valoare
               <br>
-              <small class="text-muted">Value of variant</small>
+              <small class="text-muted">Valoare variantă produs</small>
             </div>
             <div class="col col-md-2"></div>
           </div>
         </th>
-        <th>Price</th>
-        <th>Sale Price</th>
-        <th>Stock Quantity</th>
-        <th>Updated at</th>
-        <th>Actions</th>
+        <th>Preț</th>
+        <th>Preț vânzare</th>
+        <th>Cantitate inventar</th>
+        <th>Actualizat la</th>
+        <th>Acțiune</th>
       </tr>
     </thead>
     <tbody>
@@ -53,7 +53,7 @@
                 <input type="text" class="form-control" [(ngModel)]="newOption.value" />
               </div>
               <div class="col col-md-2">
-                <button (click)="addNewOption(item)" type="button" class="btn btn-primary">Add</button>
+                <button (click)="addNewOption(item)" type="button" class="btn btn-primary">Adaugă</button>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
       </tr>
       <tr *ngIf="!items?.length">
         <td colspan="10">
-          <p>There is no variant, please create new.</p>
+          <p>Ne există date...</p>
         </td>
       </tr>
     </tbody>
@@ -93,12 +93,12 @@
             </div>
             <div class="col col-md-4">
               <div class="form-group">
-                <input type="text" class="form-control" name="displayText" placeholder="Size, color, etc." [(ngModel)]="newVariant.options[0].displayText" />
+                <input type="text" class="form-control" name="displayText" placeholder="Dimensiune, culoare, etc." [(ngModel)]="newVariant.options[0].displayText" />
               </div>
             </div>
             <div class="col col-md-4">
               <div class="form-group">
-                <input type="text" class="form-control" name="value" placeholder="40, XL, blue, etc." [(ngModel)]="newVariant.options[0].value" />
+                <input type="text" class="form-control" name="value" placeholder="40, XL, albastru, etc." [(ngModel)]="newVariant.options[0].value" />
               </div>
             </div>
             <div class="col col-md-2"></div>
@@ -113,39 +113,39 @@
         </td>
         <td>
           <div class="form-group">
-            <input type="number" class="form-control" name="price" placeholder="Price" [(ngModel)]="newVariant.price" />
+            <input type="number" class="form-control" name="price" placeholder="Preț" [(ngModel)]="newVariant.price" />
           </div>
         </td>
         <td>
           <div class="form-group">
-            <input type="number" class="form-control" name="salePrice" placeholder="Sale Price" [(ngModel)]="newVariant.salePrice" />
+            <input type="number" class="form-control" name="salePrice" placeholder="Preț vânzare" [(ngModel)]="newVariant.salePrice" />
           </div>
         </td>
         <td>
           <div class="form-group">
-            <input type="number" class="form-control" name="stock" placeholder="Quantity" [(ngModel)]="newVariant.stockQuantity" />
+            <input type="number" class="form-control" name="stock" placeholder="Cantitate" [(ngModel)]="newVariant.stockQuantity" />
           </div>
         </td>
         <td></td>
         <td>
-          <button type="button" class="btn btn-primary" (click)="create()">Add new</button>
+          <button type="button" class="btn btn-primary" (click)="create()">Adaugă rând nou</button>
         </td>
       </tr>
 
     </tfoot>
   </table>
-  <div class="badge badge-info">Use these system options or custom it by yourself.</div>
+  <div class="badge badge-info">Folosește valorile implicite sau personalizează.</div>
   <div class="row">
     <div class="col col-md-3">
       <div class="form-group">
-        <input type="text" class="form-control" name="optionKey" placeholder="Search options..." [(ngModel)]="optionKey"
+        <input type="text" class="form-control" name="optionKey" placeholder="Caută opțiuni..." [(ngModel)]="optionKey"
           (change)="loadOptions()" />
       </div>
     </div>
     <div class="col col-md-3">
       <div class="form-group">
         <select [(ngModel)]="option" class="form-control" name="key" (change)="selectOptionKey(option)">
-          <option ngValue="">--Option Key--</option>
+          <option ngValue="">--Cheie opțiune--</option>
           <option *ngFor="let item of options" [ngValue]="item">{{item.name}}</option>
         </select>
       </div>
@@ -153,7 +153,7 @@
     <div class="col col-md-3">
       <div class="form-group">
         <select [(ngModel)]="detailOption" class="form-control" name="detailOption" (change)="selectOption(detailOption)">
-          <option ngValue="">--Option--</option>
+          <option ngValue="">--Opțiune--</option>
           <option *ngFor="let item of menuOptions" [ngValue]="item">{{item.key}}</option>
         </select>
       </div>

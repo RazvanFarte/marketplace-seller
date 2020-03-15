@@ -6,8 +6,8 @@ const routes: Routes = [
   {
     path: 'profile/update', component: ProfileUpdateComponent,
     data: {
-      title: 'Profile update',
-      urls: [{ title: 'Profile Update' }]
+      title: 'Modificarea Profilului',
+      urls: [{ title: 'Modificarea Profilului' }]
     }
   }
 ];

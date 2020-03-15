@@ -4,7 +4,7 @@
       <div class="row" [hidden]="!paymentGateway.stripe.enable && !paymentGateway.paypal.enable">
         <div class="col-sm-12">
           <div class="form-group">
-            <label translate>Payment Method</label>
+            <label translate>Metodă Plată </label>
             <p>
               <label class="form-check-inline" [hidden]="!paymentGateway.paypal.enable">
                 <input class="form-check-input" type="radio" name="mode" [value]="'paypal'" [(ngModel)]="userInfo.paymentMethod">
@@ -13,7 +13,7 @@
               <br>
               <label [hidden]="!paymentGateway.stripe.enable" class="form-check-inline">
                 <input class="form-check-input" type="radio" name="mode" [value]="'stripe'" [(ngModel)]="userInfo.paymentMethod">
-                <span translate>Credit Card</span>
+                <span translate>Card Credit</span>
               </label>
             </p>
           </div>
@@ -21,7 +21,7 @@
         <div class="col-sm-12" *ngIf="userInfo.paymentMethod === 'stripe'">
           <div [formGroup]="stripeTest">
             <div class="form-group">
-              <label translate>Card holder name</label>
+              <label translate>Deținător card </label>
               <input type="text" formControlName="cardName" placeholder="Jane Doe" class="form-control" name="cardHolderName" />
             </div>
             <div class="form-group">
@@ -31,17 +31,17 @@
         </div>
         <div class="col-sm-12">
           <div class="form-group">
-            <label translate>Summary</label>
+            <label translate>Sumar</label>
             <p>
-              <strong translate>Package: </strong>
+              <strong translate>Pachet: </strong>
               <span *ngIf="packagePrice">{{packageName}}</span>
             </p>
             <p>
-              <strong translate>Duration: </strong>
-              <span class="badge badge-warning" *ngIf="packagePrice">{{packageDuration}} Days</span>
+              <strong translate>Durată: </strong>
+              <span class="badge badge-warning" *ngIf="packagePrice">{{packageDuration}} Zile</span>
             </p>
             <p>
-              <strong translate>Price: </strong>
+              <strong translate>Preț: </strong>
               <span class="badge badge-danger" *ngIf="packagePrice">{{packagePrice | currency}}</span>
             </p>
           </div>
@@ -50,18 +50,18 @@
       <div class="row">
         <div class="col-sm-12" [hidden]="paymentGateway.stripe.enable || paymentGateway.paypal.enable">
           <div class="form-group text-center">
-            <h1 class="display-3">Sorry!</h1>
-            <p class="lead">The current system does not have any payment gateways available.</p>
-            <p class="lead">Please come back later!</p>
+            <h1 class="display-3">Ne pare rău!</h1>
+            <p class="lead">Systemul nu are configurate modalități de plată.</p>
+            <p class="lead">Vă rugăm reveniți mai târziu!</p>
           </div>
         </div>
         <div class="col-sm-12">
           <hr>
           <p class="text-right">
-            <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Cancel</button>
+            <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Anulează</button>
             &nbsp;
             <button [hidden]="!paymentGateway.stripe.enable && !paymentGateway.paypal.enable" class="btn btn-warning"
-              type="submit" translate>Check Out</button>
+              type="submit" translate>Finalizare comandă</button>
           </p>
         </div>
       </div>

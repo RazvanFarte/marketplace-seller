@@ -21,8 +21,8 @@ const routes: Routes = [{
     currentUser: CurrentUserResolver
   },
   data: {
-    title: 'Messages',
-    urls: [{ title: 'Messages', url: '/messages/conversations' }]
+    title: 'Mesaje',
+    urls: [{ title: 'Mesaje', url: '/messages/conversations' }]
   }
 }];
 

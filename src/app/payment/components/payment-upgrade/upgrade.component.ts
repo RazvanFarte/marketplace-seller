@@ -53,7 +53,7 @@ export class PaymentUpgradeComponent implements OnInit {
       this.utilService.setLoading(false);
       this.isLoading = false;
     }).catch(() => {
-      this.toasty.error('Something went wrong, please try again!');
+      this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
       this.utilService.setLoading(false);
       this.isLoading = false;
     });
@@ -73,7 +73,7 @@ export class PaymentUpgradeComponent implements OnInit {
 
   payment(item) {
     if (item.status === 'refunded') {
-      return this.toasty.error('This order has been refunded.');
+      return this.toasty.error('Acest ordin a fost returnat.');
     }
     const ngbModalOptions: NgbModalOptions = {
       backdrop: 'static',

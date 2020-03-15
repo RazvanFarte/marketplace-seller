@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   version: '0.0.1',
   build: 23,
-  apiBaseUrl: 'https://genstore-api.iospot.top/v1',
+  apiBaseUrl: 'https://api.react3d.ro/v1',
   apiProxy: '',
   platform: 'seller',
   googleClientId: '946463315327-0l0svqeglss2jrulg19t9hs5slem6247.apps.googleusercontent.com',

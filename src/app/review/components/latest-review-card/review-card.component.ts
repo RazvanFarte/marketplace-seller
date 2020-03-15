@@ -23,13 +23,12 @@ export class ReviewCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    let params = Object.assign({
+    const params = Object.assign({
       shopId: this.shopId
     }, this.searchField);
     this.reviewService.find(params).then((res) => {
       this.reviews = res.data.items;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
-
 }

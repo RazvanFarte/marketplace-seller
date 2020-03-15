@@ -136,7 +136,7 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
 
   upload(frm: any) {
     if (!this.uploader.queue.length) {
-      return alert('Please select file');
+      return alert('Va rugam selectati un fisier');
     }
 
     this.uploader.onCompleteAll = () => {

@@ -17,7 +17,7 @@
                       <li class="list-group-item">
                         <div class="row">
                           <div class="col-md-2">
-                            Order Id:
+                            Id Comandă:
                           </div>
                           <div class="col-md-10">
                             {{order.orderId}}
@@ -27,29 +27,29 @@
                       <li class="list-group-item">
                         <div class="row">
                           <div class="col-md-2">
-                            Created at:
+                            Creat la:
                           </div>
                           <div class="col-md-4">
                             {{order.createdAt | date:'short'}}
                           </div>
                           <div class="col-md-6">
-                            IP: {{order.userIP}}
+                            IP utilizator: {{order.userIP}}
                           </div>
                         </div>
                       </li>
                       <li class="list-group-item">
                         <div class="row">
                           <div class="col-md-2">
-                            Status:
+                            Stare:
                           </div>
                           <div class="col-md-10">
                             <select name="status" (change)="query()" [(ngModel)]="order.status" #status="ngModel">
-                              <option value="completed">Completed</option>
-                              <option value="shipping">Shipping</option>
-                              <option value="pending">Pending</option>
-                              <option value="progressing">Progressing</option>
-                              <option value="refunded">Refunded</option>
-                              <option value="cancelled">Cancelled</option>
+                              <option value="completed">Completată</option>
+                              <option value="shipping">În curs de livrare</option>
+                              <option value="pending">În așteptare</option>
+                              <option value="progressing">În progres</option>
+                              <option value="refunded">Returnată</option>
+                              <option value="cancelled">Anulat</option>
                             </select>
                           </div>
                         </div>
@@ -57,23 +57,23 @@
                       <li class="list-group-item">
                         <div class="row">
                           <div class="col-md-6">
-                            Quantity(s): {{order?.quantity}}
+                            Cantitate(s): {{order?.quantity}}
                           </div>
                           <div class="col-md-6">
-                            Shipping Price: {{order?.shippingPrice | currency}}
+                            Preț livrare: {{order?.shippingPrice | currency}}
                           </div>
                           <div class="col-md-6">
-                            Taxes Price: {{order?.taxPrice | currency}}
+                            Taxe: {{order?.taxPrice | currency}}
                           </div>
                           <div class="col-md-6">
-                            Total Price:
+                            Preț total:
                             <strong><span class="label label-danger">{{order?.totalPrice | currency}}</span></strong>
                           </div>
                           <div class="col-md-6">
-                            Commission Rate/Price: {{order?.commissionRate *100}}% / {{order?.commission | currency}}
+                            Rate comision/Preț: {{order?.commissionRate *100}}% / {{order?.commission | currency}}
                           </div>
                           <div class="col-md-6">
-                            Balance:
+                            Balanță:
                             <strong><span class="label label-danger">{{order?.balance | currency}}</span></strong>
                           </div>
                         </div>
@@ -81,21 +81,21 @@
                     </ul>
                   </div>
                 </div>
-                <h3>Product details</h3>
+                <h3>Detalii produs</h3>
                 <ul class="list-group">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Product name:
+                        Nume produs:
                       </div>
                       <div class="col-md-6">
                         {{order.productDetails?.name}}
                       </div>
                       <div class="col-md-1">
-                        Type:
+                        Tip:
                       </div>
                       <div class="col-md-3">
-                        <span class="label label-primary" *ngIf="order.productDetails?.type === 'physical'">Physical</span>
+                        <span class="label label-primary" *ngIf="order.productDetails?.type === 'physical'">Fizic</span>
                         <span class="label label-danger" *ngIf="order.productDetails?.type === 'digital'">Digital</span>
                       </div>
                     </div>
@@ -103,7 +103,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Variant:
+                        Variantă:
                       </div>
                       <div class="col-md-10">
                         <span *ngIf="order.variantDetails">
@@ -111,14 +111,14 @@
                             {{option.displayText || option.optionKey}}: {{option.value}}
                           </span>
                         </span>
-                        <span class="text-muted" [hidden]="order.variantDetails">N/A</span>
+                        <span class="text-muted" [hidden]="order.variantDetails">Indisponibil</span>
                       </div>
                     </div>
                   </li>
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Price:
+                        Preț:
                       </div>
                       <div class="col-md-10">
                         <span *ngIf="order.variantDetails">{{order.variantDetails?.price | currency}}</span>
@@ -130,7 +130,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Sale Price:
+                        Preț vânzare:
                       </div>
                       <div class="col-md-10">
                         <span *ngIf="order.variantDetails">{{order.variantDetails?.salePrice | currency}}</span>
@@ -142,7 +142,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Description:
+                        Descriere:
                       </div>
                       <div class="col-md-10" [innerHTML]="order?.productDetails?.description">
                       </div>
@@ -150,12 +150,12 @@
                   </li>
                 </ul>
                 <br>
-                <h3>Shipping details</h3>
+                <h3>Detalii livrare</h3>
                 <ul class="list-group">
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Name:
+                        Nume:
                       </div>
                       <div class="col-md-10">
                         {{order?.firstName}} {{order?.lastName}}
@@ -165,13 +165,13 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Email:
+                        Adresa de email:
                       </div>
                       <div class="col-md-4">
                         {{order?.email}}
                       </div>
                       <div class="col-md-2">
-                        Phone Number:
+                        Număr telefon:
                       </div>
                       <div class="col-md-4">
                         {{order?.phoneNumber}}
@@ -181,7 +181,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Country:
+                        Țară:
                       </div>
                       <div class="col-md-10">
                         {{order?.country}}
@@ -191,7 +191,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        State:
+                        Județ:
                       </div>
                       <div class="col-md-10">
                         {{order?.state}}
@@ -201,7 +201,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        City:
+                        Oraș:
                       </div>
                       <div class="col-md-10">
                         {{order?.city}}
@@ -211,7 +211,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Shipping Address:
+                        Adresă livrare:
                       </div>
                       <div class="col-md-10">
                         {{order?.shippingAddress}}
@@ -221,7 +221,7 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-12">
-                        User Note:
+                        Note utilizator:
                         <p class="line-text">{{order?.userNote}}</p>
                       </div>
                     </div>
@@ -229,26 +229,26 @@
                   <li class="list-group-item">
                     <div class="row">
                       <div class="col-md-2">
-                        Shipping Type (*):
+                        Modalitate livrare (*):
                       </div>
                       <div class="col-md-4">
-                        <input required type="text" class="form-control" placeholder="Enter shipping type" [(ngModel)]="order.shippingMethod"
+                        <input required type="text" class="form-control" placeholder="Introdu modalitate livrare" [(ngModel)]="order.shippingMethod"
                           name="shippingMethod" #shippingMethod="ngModel" />
                         <div *ngIf="shippingMethod.errors && (shippingMethod.dirty || shippingMethod.touched || isSubmitted)">
                           <p [hidden]="!shippingMethod.errors.required" class="required-text">
-                            Please enter shipping method!
+                            Introdu modalitate livrare
                           </p>
                         </div>
                       </div>
                       <div class="col-md-2">
-                        Code (*):
+                        Cod (*):
                       </div>
                       <div class="col-md-4">
-                        <input required type="text" class="form-control" placeholder="Enter shipping code" [(ngModel)]="order.shippingCode"
+                        <input required type="text" class="form-control" placeholder="Introdu cod livrare" [(ngModel)]="order.shippingCode"
                           name="shippingCode" #shippingCode="ngModel" />
                         <div *ngIf="shippingCode.errors && (shippingCode.dirty || shippingCode.touched || isSubmitted)">
                           <p [hidden]="!shippingCode.errors.required" class="required-text">
-                            Please enter shipping code!
+                            Introdu cod livrare!
                           </p>
                         </div>
                       </div>
@@ -256,8 +256,8 @@
                   </li>
                 </ul>
                 <br>
-                <button class="btn btn-success" type="submit">Update Shipping</button>&nbsp;
-                <a class="btn btn-warning" [routerLink]="['/orders/list']">Cancel</a>
+                <button class="btn btn-success" type="submit">Actualizează Livrare</button>&nbsp;
+                <a class="btn btn-warning" [routerLink]="['/orders/list']">Anulează</a>
               </div>
             </div>
           </div>

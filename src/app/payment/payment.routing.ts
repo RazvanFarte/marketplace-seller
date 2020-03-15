@@ -9,16 +9,16 @@ const routes: Routes = [
     path: 'history',
     component: PaymentHistoryComponent,
     data: {
-      title: 'Payments History',
-      urls: [{ title: 'Payment', url: '/payments/history' }, { title: 'Payments History' }]
+      title: 'Istoria Platilor',
+      urls: [{ title: 'Plati', url: '/payments/history' }, { title: 'Istoria Platilor' }]
     }
   },
   {
     path: 'upgrade',
     component: PaymentUpgradeComponent,
     data: {
-      title: 'Upgrade Featured Account',
-      urls: [{ title: 'Payment', url: '/payments/history' }, { title: 'Upgrade Featured Account' }]
+      title: 'Promovarea Contului',
+      urls: [{ title: 'Plati', url: '/payments/history' }, { title: 'Promovarea Contului' }]
     }
   },
   {

@@ -2,18 +2,18 @@
   <div class="row">
     <div class="col col-md-4">
       <div class="form-group">
-        <label><input type="checkbox" name="lowInventory" [(ngModel)]="shop.notifications.lowInventory" #lowInventory="ngModel"/> Low Inventory</label>
+        <label><input type="checkbox" name="lowInventory" [(ngModel)]="shop.notifications.lowInventory" #lowInventory="ngModel"/> Inventar scăzut</label>
       </div>
     </div><div class="col col-md-12">
       <div class="form-group">
-        <label>Announcement</label>
-        <textarea class="form-control" placeholder="Enter announcement" [(ngModel)]="shop.announcement" name="announcement"
+        <label>Anunț</label>
+        <textarea class="form-control" placeholder="Introdu anunț" [(ngModel)]="shop.announcement" name="announcement"
         #announcement="ngModel"></textarea>
       </div>
     </div>
     <div class="col col-md-12">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Salvează</button>
       </div>
     </div>
   </div>

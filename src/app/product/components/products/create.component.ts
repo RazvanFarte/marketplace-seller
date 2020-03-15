@@ -93,11 +93,11 @@ export class ProductCreateComponent implements OnInit {
   submit(frm: any) {
     this.isSubmitted = true;
     if (frm.invalid) {
-      return this.toasty.error('Form is invalid, please try again.');
+      return this.toasty.error('Formularul este invalid, va rugam incercati din nou.');
     }
 
     if (this.product.salePrice > this.product.price || this.product.salePrice < 0.1 || this.product.price < 0.1) {
-      return this.toasty.error('Price or sale price is invalid.');
+      return this.toasty.error('Pretul sau pretul de vanzare este invalid.');
     }
 
     if (this.product.dailyDeal && this.dealDate) {
@@ -105,7 +105,7 @@ export class ProductCreateComponent implements OnInit {
     }
 
     if (this.product.type === 'digital' && !this.product.digitalFileId) {
-      return this.toasty.error('Please select Digital file path!');
+      return this.toasty.error('Va rugam selectati calea unui fisier digital!');
     }
 
     this.freeShipAreas.forEach((item) => {
@@ -116,9 +116,9 @@ export class ProductCreateComponent implements OnInit {
     this.product.mainImage = this.mainImage || null;
     this.productService.create(this.product)
       .then(() => {
-        this.toasty.success('Product has been created');
+        this.toasty.success('Produsul a fost creat');
         this.router.navigate(['/products/list']);
-      }, err => this.toasty.error(err.data.message || 'Something went wrong!'));
+      }, err => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   changeAlias() {
@@ -127,7 +127,7 @@ export class ProductCreateComponent implements OnInit {
 
   addSpecification() {
     if (!this.newSpecification.value.trim()) {
-      return this.toasty.error('Please enter specification value');
+      return this.toasty.error('Va rugam sa introduceti valoarea specificatiei!');
     }
     this.product.specifications.push(this.newSpecification);
     this.newSpecification = { key: '', value: '' };
@@ -137,7 +137,7 @@ export class ProductCreateComponent implements OnInit {
     // this.product.mainImage = media._id;
     // this.imageUrl = media.fileUrl;
     if (media.type !== 'photo') {
-      return this.toasty.error('Please select image!');
+      return this.toasty.error('Va rugam sa selectati o imagine!');
     }
 
     this.images.push(media);

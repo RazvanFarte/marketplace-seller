@@ -1,15 +1,15 @@
 <div class="modal-content">
   <div class="modal-header">
     <h4 class="modal-title">
-      <label>Send Complain to Admin</label>
+      <label>Trimite plângere către administrator</label>
     </h4>
   </div>
   <div class="modal-body">
-    <h5>Complain (*):</h5>
-    <textarea rows="3" cols="44" [(ngModel)]="content" placeholder="Leave some text here.."></textarea>
+    <h5>Plângere (*):</h5>
+    <textarea rows="3" cols="44" [(ngModel)]="content" placeholder="Introdu text.."></textarea>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-success" (click)="submit()">Send</button>
-    <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-success" (click)="submit()">Trimite</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close('Close click')">Închide</button>
   </div>
 </div>

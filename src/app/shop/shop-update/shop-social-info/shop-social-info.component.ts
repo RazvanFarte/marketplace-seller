@@ -20,12 +20,12 @@ export class ShopSocialInfoComponent implements OnInit {
   submit(frm: any) {
     this.isSubmitted = true;
     if (!frm.valid) {
-      return this.toasty.error('Something went wrong, please check and try again!');
+      return this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
     }
     const data = _.pick(this.shop, ['socials']);
 
     this.shopService.update(this.shop.id, data).then(resp => {
-      this.toasty.success('Updated successfuly!');
+      this.toasty.success('Editarea a fost efectuata cu succes!');
     }).catch((err) => this.toasty.error(err.data.data.message));
   }
 }

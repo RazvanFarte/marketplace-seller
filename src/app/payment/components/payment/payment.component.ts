@@ -46,17 +46,17 @@ export class PaymentComponent implements OnInit {
   submit(frm: any) {
     this.isSubmitted = true;
     if (frm.invalid) {
-      return this.toasty.error('Please submit valid form');
+      return this.toasty.error('Va rugam trimiteti un formular valid');
     }
 
     if (!this.userInfo.paymentMethod) {
-      return this.toasty.error('Please select Payment Method!');
+      return this.toasty.error('Va rugam sa selectati o modalitate de plata!');
     }
 
     if (this.userInfo.paymentMethod === 'stripe') {
       const name = this.stripeTest.get('cardName').value;
       if (!name) {
-        return this.toasty.error('Please enter card holder name!');
+        return this.toasty.error('Va rugam sa introduceti detinatorul cardului!');
       }
       this.stripeService
         .createToken(this.card.getCard(), { name })
@@ -68,7 +68,7 @@ export class PaymentComponent implements OnInit {
             this.doPost();
           } else if (result.error) {
             // Error creating the token
-            this.toasty.error('Something went wrong, please try again!');
+            this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
           }
         });
     } else {
@@ -88,7 +88,7 @@ export class PaymentComponent implements OnInit {
         })
         .catch((err) => {
           this.activeModal.close();
-          this.toasty.error('Something went wrong, please try again!');
+          this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
         });
     } else if (this.userInfo.paymentMethod === 'stripe') {
       this.paymentService.request({
@@ -103,7 +103,7 @@ export class PaymentComponent implements OnInit {
         })
         .catch((err) => {
           this.activeModal.close();
-          this.toasty.error('Something went wrong, please try again!');
+          this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
         });
     } else {
       this.activeModal.close();

@@ -9,24 +9,24 @@ const routes: Routes = [
     path: 'list',
     component: CouponsComponent,
     data: {
-      title: 'Coupon manager',
-      urls: [{ title: 'Coupons', url: '/coupons/list' }]
+      title: 'Manager de cupoane',
+      urls: [{ title: 'Cupoane', url: '/coupons/list' }]
     }
   },
   {
     path: 'create',
     component: CouponCreateComponent,
     data: {
-      title: 'Coupon manager',
-      urls: [{ title: 'Coupons', url: '/coupons/list' }, { title: 'Create', url: '/coupons/create' }]
+      title: 'Manager de cupoane',
+      urls: [{ title: 'Cupoane', url: '/coupons/list' }, { title: 'Creare', url: '/coupons/create' }]
     }
   },
   {
     path: 'update/:id',
     component: CouponUpdateComponent,
     data: {
-      title: 'Coupon manager',
-      urls: [{ title: 'Coupons', url: '/coupons/list' }, { title: 'Update', url: '/coupons/update' }]
+      title: 'Manager de cupoane',
+      urls: [{ title: 'Cupoane', url: '/coupons/list' }, { title: 'Editare', url: '/coupons/update' }]
     }
   }
 ];

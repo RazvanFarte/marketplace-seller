@@ -23,7 +23,6 @@ export class LastOrderCardComponent implements OnInit {
     this.orderService.find(this.params).then((res) => {
       this.orders = res.data.items;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
-
 }

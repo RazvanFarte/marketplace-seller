@@ -2,93 +2,93 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label>Shop Name (*)</label>
-        <input type="text" class="form-control" placeholder="Enter shop name" [(ngModel)]="shop.name" required name="name" #name="ngModel" />
+        <label>Nume magazin (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu nume magazin" [(ngModel)]="shop.name" required name="name" #name="ngModel" />
         <div *ngIf="name.errors && (name.dirty || name.touched || isSubmitted)">
           <p [hidden]="!name.errors.required" class="required-text">
-            Please enter shop!
+            Introdu magazin!
           </p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Shop Alias</label>
-        <input type="text" class="form-control" placeholder="Enter shop alias" [(ngModel)]="shop.alias" name="alias" #name="ngModel" />
+        <label>Alias magazin</label>
+        <input type="text" class="form-control" placeholder="Introdu alias magazin" [(ngModel)]="shop.alias" name="alias" #name="ngModel" />
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Address</label>
-        <input type="text" class="form-control" placeholder="Enter address" [(ngModel)]="shop.address" name="address" #address="ngModel" />
+        <label>Adresă</label>
+        <input type="text" class="form-control" placeholder="Introdu adresă" [(ngModel)]="shop.address" name="address" #address="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>City</label>
-        <input type="text" class="form-control" placeholder="Enter city" [(ngModel)]="shop.city" name="city" #city="ngModel" />
+        <label>Oraș</label>
+        <input type="text" class="form-control" placeholder="Introdu oraș" [(ngModel)]="shop.city" name="city" #city="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>State</label>
-        <input type="text" class="form-control" placeholder="Enter state" [(ngModel)]="shop.state" name="state" #state="ngModel" />
+        <label>Județ</label>
+        <input type="text" class="form-control" placeholder="Introdu județ" [(ngModel)]="shop.state" name="state" #state="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Country</label>
-        <input type="text" class="form-control" placeholder="Enter country" [(ngModel)]="shop.country" name="country" #country="ngModel" />
+        <label>Țară</label>
+        <input type="text" class="form-control" placeholder="Introdu țară" [(ngModel)]="shop.country" name="country" #country="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Zip code</label>
-        <input type="text" class="form-control" placeholder="Enter zip code" [(ngModel)]="shop.zipcode" name="zipcode" #zipcode="ngModel" />
+        <label>Cod zip</label>
+        <input type="text" class="form-control" placeholder="Introdu cod zip" [(ngModel)]="shop.zipcode" name="zipcode" #zipcode="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Email (*)</label>
-        <input type="text" class="form-control" placeholder="user@example.com" [(ngModel)]="shop.email" name="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+        <label>Adresa de email (*)</label>
+        <input type="text" class="form-control" placeholder="utilizator@exemplu.ro" [(ngModel)]="shop.email" name="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
       <div *ngIf="email.errors && (email.dirty || email.touched || isSubmitted)">
         <p [hidden]="!email.errors.required" class="required-text">
-          Email is required.
+          Adresa de email obligatorie.
         </p>
         <p [hidden]="!email.errors.pattern" class="required-text">
-          Please enter a valid email address.
+          Introdu adresă de email validă.
         </p>
       </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Phone number</label>
-        <input type="text" class="form-control" placeholder="Enter phone number" [(ngModel)]="shop.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" />
+        <label>Numărul de telefon</label>
+        <input type="text" class="form-control" placeholder="Introdu numărul de telefon" [(ngModel)]="shop.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" />
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Return Address</label>
-        <input type="text" class="form-control" placeholder="Enter return address" [(ngModel)]="shop.returnAddress" name="returnAddress" />
+        <label>Adresă de returnare</label>
+        <input type="text" class="form-control" placeholder="Introdu adresa de returnare" [(ngModel)]="shop.returnAddress" name="returnAddress" />
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Header Text</label>
-        <input type="text" class="form-control" placeholder="Enter text" [(ngModel)]="shop.headerText" name="text" />
+        <label>Text antet</label>
+        <input type="text" class="form-control" placeholder="Introdu text" [(ngModel)]="shop.headerText" name="text" />
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Announcement</label>
-        <textarea type="text" class="form-control" placeholder="fuzzy fuzzy ..." [(ngModel)]="shop.announcement" name="announcement" cols="3"></textarea>
+        <label>Anunț</label>
+        <textarea type="text" class="form-control" placeholder="Introdu text" [(ngModel)]="shop.announcement" name="announcement" cols="3"></textarea>
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Google anyalytics code</label>
-        <input type="text" class="form-control" placeholder="Enter Google anyalytics code" [(ngModel)]="shop.gaCode" name="gaCode" #gaCode="ngModel" />
+        <label>Cod Google Anyalytics</label>
+        <input type="text" class="form-control" placeholder="Introdu Cod Google Anyalytics" [(ngModel)]="shop.gaCode" name="gaCode" #gaCode="ngModel" />
       </div>
     </div>
     <div class="col-md-12">
@@ -99,7 +99,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Verification Issue <media-select (onSelect)="selectVerificationIssue($event)"></media-select></label><br />
+        <label>Problemă la verificarea magazinului <media-select (onSelect)="selectVerificationIssue($event)"></media-select></label><br />
         <a href="{{shop?.verificationIssue?.fileUrl}}" download target="_blank">{{shop?.verificationIssue?.name}}</a>
       </div>
     </div>
@@ -111,7 +111,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn btn-primary" type="submit">Salvează</button>
       </div>
     </div>
   </div>

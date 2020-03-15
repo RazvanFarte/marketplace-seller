@@ -29,7 +29,7 @@ export class LoginComponent {
         if (err.data.data.message) {
           return this.toasty.error(err.data.data.message);
         }
-        return this.toasty.error('Something went wrong, please try again!');
+        return this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
       });
   }
 }

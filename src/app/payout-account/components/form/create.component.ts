@@ -36,17 +36,17 @@ export class AccountCreateComponent implements OnInit {
     this.isSubmitted = true;
     console.log(frm);
     if (frm.invalid) {
-      return this.toasty.error('Form is invalid, please try again.');
+      return this.toasty.error('Formularul este invalid, va rugam incercati din nou.');
     }
 
     if (this.account.type === 'paypal' && this.account.paypalAccount == '') {
-      return this.toasty.error('If you select type payout is paypal, please enter Paypal Account');
+      return this.toasty.error('Daca ati selectat Paypal ca modalitate de plata, va rugam sa introduceti contul de Paypal!');
     }
 
     this.accountService.create(this.account)
       .then(() => {
-        this.toasty.success('Account has been created');
+        this.toasty.success('Contul a fost creat');
         this.router.navigate(['/accounts/list']);
-      }, err => this.toasty.error(err.data.data.message || 'Something went wrong, please check and try again!'));
+      }, err => this.toasty.error(err.data.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 }

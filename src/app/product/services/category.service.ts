@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RestangularModule, Restangular } from 'ngx-restangular';
+import { Restangular } from 'ngx-restangular';
 import 'rxjs/add/operator/toPromise';
 import * as _ from 'lodash';
 

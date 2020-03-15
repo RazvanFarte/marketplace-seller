@@ -20,7 +20,7 @@ export class ForgotComponent {
 	forgot(frm: any) {
 		this.submitted = true;
 		this.Auth.forgot(this.email).then((resp) => {
-			this.toasty.success('New password has been sent, please check your email inbox.');
+			this.toasty.success('Noua parola a fost trimisa, va rugam sa verificati adresa de email.');
 			this.email = '';
 			this.submitted = false;
 			frm.reset();

@@ -9,52 +9,52 @@
           <div class="row">
             <div class="col col-md-6">
               <div class="form-group">
-                <label>First and last name (*)</label>
-                <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="info.name" required name="name" #name="ngModel" />
+                <label>Nume (*)</label>
+                <input type="text" class="form-control" placeholder="Introdu nume" [(ngModel)]="info.name" required name="name" #name="ngModel" />
                 <div *ngIf="name.errors && (name.dirty || name.touched || isSubmitted)">
                   <p [hidden]="!name.errors.required" class="required-text">
-                    Please enter user first name and last name!
+                    Introdu nume utilizator!
                   </p>
                 </div>
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Email (*)</label>
-                <input type="email" class="form-control" placeholder="user@example.com" [(ngModel)]="info.email" name="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled />
+                <label>Adresa de email (*)</label>
+                <input type="email" class="form-control" placeholder="utilizator@exemplu.ro" [(ngModel)]="info.email" name="email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled />
                 <div *ngIf="email.errors && (email.dirty || email.touched || isSubmitted)">
                   <p [hidden]="!email.errors.required" class="required-text">
-                    Email is required.
+                    Adresa de email e obligatorie.
                   </p>
                   <p [hidden]="!email.errors.pattern" class="required-text">
-                    Please enter a valid email address.
+                    Introdu adresă de email validă.
                   </p>
                 </div>
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Phone number</label>
+                <label>Numărul de telefon</label>
                 <input type="text" class="form-control" [(ngModel)]="info.phoneNumber" name="phone" />
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Address</label>
+                <label>Adresă</label>
                 <input type="text" class="form-control" [(ngModel)]="info.address" name="address" />
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Password (*)</label>
+                <label>Parolă (*)</label>
                 <input type="password" class="form-control" [(ngModel)]="info.password" name="password" #password="ngModel" minlength="6" />
                 <div *ngIf="password.errors && (password.dirty || password.touched || isSubmitted)">
                   <p [hidden]="!password.errors.minlength" class="required-text">
-                    Password must be at least 6 characters!
+                    Parolă trebuie să conțină cel puțin 6 caractere!
                   </p>
                 </div>
                 <p class="help help-block">
-                  <small>Blank to keep current password</small>
+                  <small>Lasă câmpul gol pentru a păstra parola curentă</small>
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@
             </div>
             <div class="col col-md-12">
               <div class="form-group">
-                <button type="button" class="btn btn-primary" (click)="complain()">Complain</button>
+                <button type="button" class="btn btn-primary" (click)="complain()">Plângere</button>
                 &nbsp;
-                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-primary" type="submit">Salvează</button>
               </div>
             </div>
           </div>

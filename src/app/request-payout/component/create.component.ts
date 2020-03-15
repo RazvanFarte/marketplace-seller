@@ -25,7 +25,7 @@ export class CreateRequestPayoutComponent implements OnInit {
       sortType: 'desc'
     }).then((res) => {
       this.accounts = res.data.items;
-    }).catch(() => this.toasty.error('Something went wrong, please try again!'));
+    }).catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   getBalance() {
@@ -33,21 +33,21 @@ export class CreateRequestPayoutComponent implements OnInit {
       .then(resp => {
         this.balance = resp.data;
       })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
   // selectDateTo() {
   //   this.toDate = new Date(this.toDate.year, this.toDate.month, this.toDate.day).toUTCString();
   // }
   submit() {
     if (!this.payoutAccountId) {
-      return this.toasty.error('Please enter Payout Account Id');
+      return this.toasty.error('Va rugam sa introduceti id-ul contului de palta.');
     }
     this.payoutService.create({ payoutAccountId: this.payoutAccountId }).then(res => {
-      this.toasty.success('Your request has been sent.');
+      this.toasty.success('Cererea a fost trimisa.');
       this.router.navigate(['/requestPayout']);
     })
       .catch(err => {
-        this.toasty.error(err.data.message || err.data.data.message || 'Something went wrong, please try again')
+        this.toasty.error(err.data.message || err.data.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!');
       });
   }
 }

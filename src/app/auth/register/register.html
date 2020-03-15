@@ -4,58 +4,58 @@
   </div>
   <div class="card-body">
     <div *ngIf="currentUser && currentUser.isShop">
-      <p class="text-center">Hello {{currentUser?.name}}</p>
+      <p class="text-center">Bine ai venit {{currentUser?.name}}</p>
       <p class="text-center">
-        You have registered shop. Go to <a [routerLink]="['/starter']">your dashboard</a>
+        Te-ai înregistrat cu succes. Mergi la <a [routerLink]="['/starter']">panoul de control</a>
       </p>
     </div>
     <form class="form-horizontal form-material" (submit)="submit(frm)" #frm="ngForm">
-      <h3 class="box-title m-b-20 text-center">Register seller</h3>
+      <h3 class="box-title m-b-20 text-center">Înregistrează cont nou vânzător</h3>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Shop Name" required type="text" autocomplete="off" name="name"
+            <input class="form-control" placeholder="Nume magazin" required type="text" autocomplete="off" name="name"
               [(ngModel)]="shop.name" #name="ngModel" />
             <div *ngIf="name.errors && (name.dirty || name.touched || submitted)">
               <p [hidden]="!name.errors.required" class="error">
-                Name is required
+                Nume obligatoriu
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Email" required type="email" autocomplete="off" name="email"
+            <input class="form-control" placeholder="Adresa de email" required type="email" autocomplete="off" name="email"
               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="shop.email" #email="ngModel" />
             <div *ngIf="email.errors && (email.dirty || email.touched ||
               submitted)">
               <p [hidden]="!email.errors.required" class="error">
-                Email is required
+                Adresa de email obligatoriu
               </p>
               <p [hidden]="!email.errors?.pattern" class="error">
-                Email is invalid email address.
+                Adresa de email invalidă.
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Password" required type="password" autocomplete="off" name="pw"
+            <input class="form-control" placeholder="Parolă" required type="password" autocomplete="off" name="pw"
               [(ngModel)]="shop.password" #password="ngModel" />
             <div *ngIf="password.errors && (password.dirty || password.touched || submitted)">
               <p [hidden]="!password.errors.required" class="error">
-                Password is required
+                Parolă obligatorie
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Confirm Password" required type="password" autocomplete="off" name="confirmPwd"
-              [(ngModel)]="confirmPassword" #confirmPwd="ngModel" />
+            <input class="form-control" placeholder="Confirmare Parolă" required type="password" autocomplete="off" name="confirmPwd"
+              [(ngModel)]="confirmParolă" #confirmPwd="ngModel" />
             <div *ngIf="confirmPwd.errors && (confirmPwd.dirty || confirmPwd.touched || submitted)">
               <p [hidden]="!confirmPwd.errors.required" class="error">
-                Confirm password is required
+                Confirmare parolă obligatorie
               </p>
             </div>
           </div>
@@ -64,15 +64,15 @@
           <div class="form-group">
             <div class="input-group">
               <dial-code (selectCode)="selectDial($event)"></dial-code>
-              <input class="form-control" placeholder="Phone number" required type="text" pattern="[0-9]{9,10}"
+              <input class="form-control" placeholder="Numărul de telefon" required type="text" pattern="[0-9]{9,10}"
                 autocomplete="off" name="Phone" [(ngModel)]="shop.phoneNumber" #phoneNumber="ngModel" />
               <div *ngIf="phoneNumber.errors && (phoneNumber.dirty ||
                 phoneNumber.touched || submitted)">
                 <p [hidden]="!phoneNumber.errors.required" class="error">
-                  Phone number is required
+                  Numărul de telefon obligatoriu
                 </p>
                 <p [hidden]="!phoneNumber.errors.pattern" class="error">
-                  Phone number must have 9-10 numbers
+                  Numărul de telefon trebuie să aivă între 9 și 10 cifre
                 </p>
               </div>
             </div>
@@ -80,55 +80,55 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Shop address" required type="text" autocomplete="off" name="address"
+            <input class="form-control" placeholder="Adresă magazin" required type="text" autocomplete="off" name="address"
               [(ngModel)]="shop.address" #address="ngModel" />
             <div *ngIf="address.errors && (address.dirty || address.touched || submitted)">
               <p [hidden]="!address.errors.required" class="error">
-                Address is required
+                Adresă obligatorie
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Zipcode" required type="text" autocomplete="off" name="address"
+            <input class="form-control" placeholder="Cod zip" required type="text" autocomplete="off" name="address"
               [(ngModel)]="shop.zipcode" #zipcode="ngModel" />
             <div *ngIf="zipcode.errors && (zipcode.dirty || zipcode.touched || submitted)">
               <p [hidden]="!zipcode.errors.required" class="error">
-                Zipcode is required
+                Cod zip obligatoriu
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="City" required type="text" autocomplete="off" name="city"
+            <input class="form-control" placeholder="Oraș" required type="text" autocomplete="off" name="city"
               [(ngModel)]="shop.city" #city="ngModel" />
             <div *ngIf="city.errors && (city.dirty || city.touched || submitted)">
               <p [hidden]="!city.errors.required" class="error">
-                City is required
+                Oraș obligatoriu
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="State" required type="text" autocomplete="off" name="state"
+            <input class="form-control" placeholder="Județ" required type="text" autocomplete="off" name="state"
               [(ngModel)]="shop.state" #state="ngModel" />
             <div *ngIf="state.errors && (state.dirty || state.touched || submitted)">
               <p [hidden]="!state.errors.required" class="error">
-                State is required
+                Județ obligatoriu
               </p>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <input class="form-control" placeholder="Country (*)" required type="text" autocomplete="off" name="country"
+            <input class="form-control" placeholder="Țară (*)" required type="text" autocomplete="off" name="country"
               [(ngModel)]="shop.country" #country="ngModel" />
             <div *ngIf="country.errors && (country.dirty || country.touched || submitted)">
               <p [hidden]="!country.errors.required" class="error">
-                Country is required
+                Țară obligatorie
               </p>
             </div>
           </div>
@@ -137,20 +137,20 @@
       <div class="col-md-12">
         <div class="form-group">
           <span *ngIf="issueDocument">
-            <span>Document was uploaded</span> <br>
-            <img src="/assets/images/confirm-certificate.png" alt="Uploaded document" style="width: 50px" />
+            <span>Documentul a fost încărcat</span> <br>
+            <img src="/assets/images/confirm-certificate.png" alt="Documentul încărcat" style="width: 50px" />
           </span>
           <file-upload [options]="issueDocumentOptions"></file-upload>
         </div>
       </div>
       <div class="col-md-12">
         <div class="form-group text-center m-t-20">
-          <button class="btn btn-info btn-lg ext-uppercase waves-effect waves-light" type="submit">Register</button>
+          <button class="btn btn-info btn-lg ext-uppercase waves-effect waves-light" type="submit">Înregistrează cont nou</button>
         </div>
       </div>
       <div class="form-group row">
         <div class="col-md-12 font-14">
-          <a class="text-dark pull-right" routerLink="/auth/login"> Login?</a>
+          <a class="text-dark pull-right" routerLink="/auth/login"> Autentifică?</a>
         </div>
       </div>
     </form>

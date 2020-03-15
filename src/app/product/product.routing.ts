@@ -9,24 +9,24 @@ const routes: Routes = [
     path: 'list',
     component: ProductsComponent,
     data: {
-      title: 'Product manager',
-      urls: [{ title: 'Products', url: '/products/list' }]
+      title: 'Manager de produse',
+      urls: [{ title: 'Produse', url: '/products/list' }]
     }
   },
   {
     path: 'create',
     component: ProductCreateComponent,
     data: {
-      title: 'Product manager',
-      urls: [{ title: 'Products', url: '/products/list' }, { title: 'Create', url: '/products/create' }]
+      title: 'Manager de produse',
+      urls: [{ title: 'Produse', url: '/products/list' }, { title: 'Creare', url: '/products/create' }]
     }
   },
   {
     path: 'update/:id',
     component: ProductUpdateComponent,
     data: {
-      title: 'Product manager',
-      urls: [{ title: 'Products', url: '/products/list' }, { title: 'Update', url: '/products/update' }]
+      title: 'Manager de produse',
+      urls: [{ title: 'Produse', url: '/products/list' }, { title: 'Editare', url: '/products/update' }]
     }
   }
 ];

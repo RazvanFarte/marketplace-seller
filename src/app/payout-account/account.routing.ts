@@ -9,24 +9,24 @@ const routes: Routes = [
     path: '',
     component: AccountsComponent,
     data: {
-      title: 'Account manager',
-      urls: [{ title: 'Accounts', url: '/payout/account' }]
+      title: 'Manager de conturi',
+      urls: [{ title: 'Conturi', url: '/payout/account' }]
     }
   },
   {
     path: 'create',
     component: AccountCreateComponent,
     data: {
-      title: 'Account manager',
-      urls: [{ title: 'Accounts', url: '/payout/account' }, { title: 'Create', url: '/payout/account/create' }]
+      title: 'Manager de conturi',
+      urls: [{ title: 'Conturi', url: '/payout/account' }, { title: 'Creare', url: '/payout/account/create' }]
     }
   },
   {
     path: 'update/:id',
     component: AccountUpdateComponent,
     data: {
-      title: 'Account manager',
-      urls: [{ title: 'Accounts', url: '/payout/account' }, { title: 'Update', url: '/payout/account/update' }]
+      title: 'Manager de conturi',
+      urls: [{ title: 'Conturi', url: '/payout/account' }, { title: 'Editare', url: '/payout/account/update' }]
     }
   }
 ];

@@ -1,17 +1,17 @@
 <div class="card">
   <div class="card-body">
     <div style="background: beige; padding: 10px; margin-bottom: 20px">
-      <h4>Summary balance: {{balance?.summary?.balance | currency}}</h4>
-      <h4>COD balance: {{balance?.cod?.balance | currency}}</h4>
-      <h4>Non-COD balance: {{balance?.nonCod?.balance | currency}}</h4>
+      <h4>Sumar balanță: {{balance?.summary?.balance | currency}}</h4>
+      <h4>Balanță ramburs: {{balance?.cod?.balance | currency}}</h4>
+      <h4>Balanță non-ramburs: {{balance?.nonCod?.balance | currency}}</h4>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label>Please select pay out account (*)</label>
+          <label>Introdu cont de plată (*)</label>
           <select [(ngModel)]="payoutAccountId" class="form-control" required>
             <option *ngFor="let item of accounts" [value]="item._id">
-              <span *ngIf="item.type === 'bank-account'">Bank - {{item?.bankName}} - {{item?.accountNumber}}</span>
+              <span *ngIf="item.type === 'bank-account'">Banca - {{item?.bankName}} - {{item?.accountNumber}}</span>
               <span *ngIf="item.type === 'paypal'">Paypal - {{item?.paypalAccount}}</span>
             </option>
           </select>
@@ -28,7 +28,7 @@
     </div>
     <div class="col col-md-12">
       <div class="form-group">
-        <button (click)="submit()" class="btn btn-primary">Submit</button>
+        <button (click)="submit()" class="btn btn-primary">Trimite</button>
       </div>
     </div>
   </div>

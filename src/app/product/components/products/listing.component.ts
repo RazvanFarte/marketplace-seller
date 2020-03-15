@@ -41,7 +41,7 @@ export class ProductsComponent implements OnInit {
       fileFieldName: 'file',
       onFinish: (resp) => {
         if (resp.message === 'OK') {
-          this.toasty.success('Your product list is being processed. Please come back in a while!');
+          this.toasty.success('Lista produsului dumneavoastra este procesata. Va rugam sa reveniti!');
           setTimeout(function () { window.location.reload(); }, 2000);
         } else {
           this.toasty.error(resp.message);
@@ -69,20 +69,20 @@ export class ProductsComponent implements OnInit {
         this.isLoading = false;
       })
       .catch(() => {
-        this.toasty.error('Something went wrong, please try again!');
+        this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
         this.utilService.setLoading(false);
         this.isLoading = false;
       });
   }
 
   remove(itemId: any, index: number) {
-    if (window.confirm('Are you sure want to delete this item?')) {
+    if (window.confirm('Sunteti sigur ca vreti sa stergeti acest item?')) {
       this.productService.remove(itemId)
         .then(() => {
-          this.toasty.success('Item has been deleted!');
+          this.toasty.success('Item-ul a fost sters!');
           this.items.splice(index, 1);
         })
-        .catch((err) => this.toasty.error(err.data.message || 'Something went wrong, please try again!'));
+        .catch((err) => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
     }
   }
 

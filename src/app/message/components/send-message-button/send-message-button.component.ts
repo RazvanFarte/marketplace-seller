@@ -18,7 +18,7 @@ export class SendMessageButtonComponent {
 
   sendMessage() {
     if (!this.authService.isLoggedin()) {
-      return this.toasty.error('Please login to send message');
+      return this.toasty.error('Va rugam sa va logati pentru a putea trimite mesaje');
     }
 
     this.conversationService.create(this.recipientId)
@@ -30,7 +30,7 @@ export class SendMessageButtonComponent {
         });
         modalRef.componentInstance.conversation = resp.data;
         modalRef.result.then(result => {
-          this.toasty.success('Your message has been sent');
+          this.toasty.success('Mesajul a fost trimis');
         }, () => { });
       });
 

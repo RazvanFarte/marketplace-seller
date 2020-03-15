@@ -14,8 +14,8 @@
   <div class="col-lg-6 col-md-6">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title"><span class="lstick"></span>Latest Messages from User</h4>
-        <div class="comment-widgets" *ngFor="let item of latestMessages">
+        <h4 class="card-title"><span class="lstick"></span>Ultimele mesaje de la utilizator</h4>
+        <div class="comment-widgets" *ngFor="let item of latestMesaje">
           <div class="d-flex flex-row comment-row">
             <div class="p-2"><span class="round"><img alt="user" width="50" [src]="item.sender?.avatarUrl"></span></div>
             <div class="comment-text w-100">
@@ -54,80 +54,80 @@
         <div class="col-lg-6 col-md-6">
           <div class="text-center bg-light">
             <div class="p-20 b-r">
-              <h4 class="m-b-0 font-medium">Personal Information</h4>
+              <h4 class="m-b-0 font-medium">Informații personale</h4>
             </div>
           </div>
           <ul class="list-group">
             <li class="list-group-item">
               <div class="row">
                 <div class="col-lg-6">
-                  Address: {{shop.address}}
+                  Adresă: {{shop.address}}
                 </div>
                 <div class="col-lg-6">
-                  City: {{shop.city}}
+                  Oraș: {{shop.city}}
                 </div>
               </div>
             </li>
             <li class="list-group-item">
               <div class="row">
                 <div class="col-lg-6">
-                  State: {{shop.state}}
+                  Județ: {{shop.state}}
                 </div>
                 <div class="col-lg-6">
-                  Country: {{shop.country}}
+                  Țară: {{shop.country}}
                 </div>
               </div>
             </li>
           </ul>
           <div class="text-center bg-light">
             <div class="p-20 b-r">
-              <h4 class="m-b-0 font-medium">Business Information</h4>
+              <h4 class="m-b-0 font-medium">Informații Afacere</h4>
             </div>
           </div>
           <ul class="list-group">
             <li class="list-group-item">
-              Name: {{shop.businessInfo?.name}}
+              Nume: {{shop.businessInfo?.name}}
             </li>
             <li class="list-group-item">
-              Identifier: {{shop.businessInfo?.identifier}}
+              Id: {{shop.businessInfo?.identifier}}
             </li>
             <li class="list-group-item">
-              Address: {{shop.businessInfo?.address}}
+              Adresă: {{shop.businessInfo?.address}}
             </li>
           </ul>
         </div>
         <div class="col-lg-6 col-md-6">
           <div class="text-center bg-light">
             <div class="p-20 b-r">
-              <h4 class="m-b-0 font-medium">More Information</h4>
+              <h4 class="m-b-0 font-medium">Mai multe informații</h4>
             </div>
           </div>
           <ul class="list-group">
             <li class="list-group-item">
-              Return Address: {{shop.returnAddress}}
+              Adresă returnare: {{shop.returnAddress}}
             </li>
             <li class="list-group-item">
-              Refund Policy: {{shop.refundPolicy}}
+              Politică returnare: {{shop.refundPolicy}}
             </li>
             <li class="list-group-item">
-              Google anyalytics code: {{shop.gaCode}}
+              Cod Google Anyalytics: {{shop.gaCode}}
             </li>
             <li class="list-group-item">
-              Zip code: {{shop.zipcode}}
+              Cod zip: {{shop.zipcode}}
             </li>
           </ul>
         </div>
         <div class="col-lg-6 col-md-6">
           <div class="text-center bg-light">
             <div class="p-20 b-r">
-              <h4 class="m-b-0 font-medium">Bank Information</h4>
+              <h4 class="m-b-0 font-medium">Informații bancă</h4>
             </div>
           </div>
           <ul class="list-group">
             <li class="list-group-item">
               <div class="row">
                 <div class="col-lg-6">
-                  Name: {{shop.bankInfo?.bankName}}
+                  Nume: {{shop.bankInfo?.bankName}}
                 </div>
                 <div class="col-lg-6">
                   ID: {{shop.bankInfo?.bankId}}
@@ -137,25 +137,25 @@
             <li class="list-group-item">
               <div class="row">
                 <div class="col-lg-6">
-                  Branch Name: {{shop.bankInfo?.bankBranchName}}
+                  Nume unitate: {{shop.bankInfo?.bankBranchName}}
                 </div>
                 <div class="col-lg-6">
-                  Branch ID: {{shop.bankInfo?.bankBranchId}}
+                  ID unitate: {{shop.bankInfo?.bankBranchId}}
                 </div>
               </div>
             </li>
             <li class="list-group-item">
               <div class="row">
                 <div class="col-lg-6">
-                  Account name: {{shop.bankInfo?.accountName}}
+                  Nume cont: {{shop.bankInfo?.accountName}}
                 </div>
                 <div class="col-lg-6">
-                  Account Number: {{shop.bankInfo?.accountNumber}}
+                  Număr cont: {{shop.bankInfo?.accountNumber}}
                 </div>
               </div>
             </li>
             <li class="list-group-item">
-              Swift Code: {{shop.bankInfo?.swiftCode}}
+              Cod Swift: {{shop.bankInfo?.swiftCode}}
             </li>
           </ul>
         </div>

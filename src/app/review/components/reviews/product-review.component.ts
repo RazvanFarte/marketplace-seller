@@ -25,7 +25,7 @@ export class ProductReviewComponent implements OnInit {
   }
 
   query() {
-    let params = {
+    const params = {
       productId: this.productId,
       page: this.page,
       take: this.take,
@@ -35,6 +35,6 @@ export class ProductReviewComponent implements OnInit {
       this.reviews = res.data.items;
       this.total = res.data.count;
     })
-      .catch(() => this.toasty.error('Something went wrong, please try again!'));
+      .catch(() => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 }

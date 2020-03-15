@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     this.issueDocumentOptions = {
       url: window.appConfig.apiBaseUrl + '/shops/register/document',
       fileFieldName: 'file',
-      hintText: 'Click or drag verificaiton document here',
+      hintText: 'Dati click sau trageti aici documentul de verificare',
       onFinish: (resp) => {
         this.issueDocument = resp.data;
       }
@@ -49,21 +49,21 @@ export class RegisterComponent implements OnInit {
     }
 
     if (this.shop.password !== this.confirmPassword) {
-      return this.toasty.error('Password does not match.');
+      return this.toasty.error('Parola nu se potriveste.');
     }
 
     if (!this.issueDocument) {
-      return this.toasty.error('Please upload document for verification.');
+      return this.toasty.error('Va rugam sa incarcati documentul pentru verificare.');
     }
 
     this.shop.phoneNumber = `${this.dialCode}${this.shop.phoneNumber}`;
     this.shop.verificationIssueId = this.issueDocument._id;
     this.auth.register(this.shop)
       .then(resp => {
-        this.toasty.success('Your account has been created. Wait admin to verify.');
+        this.toasty.success('Contul a fost creat. Va rugam asteptati verificarea administratorului.');
         this.router.navigate(['/auth/login']);
       })
-      .catch(e => this.toasty.error(e.data.data.message || 'Something went wrong, please try again')); // TODO - implement me
+      .catch(e => this.toasty.error(e.data.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!')); // TODO - implement me
   }
 
   public selectDial(event) {

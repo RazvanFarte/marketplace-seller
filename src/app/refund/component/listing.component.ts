@@ -37,7 +37,7 @@ export class ListingComponent implements OnInit {
         this.items = resp.data.items;
         this.total = resp.data.count;
       })
-      .catch(() => alert('Something went wrong, please try again!'));
+      .catch(() => alert('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   sortBy(field: string, type: string) {
@@ -45,5 +45,4 @@ export class ListingComponent implements OnInit {
     this.sortOption.sortType = type;
     this.query();
   }
-
 }

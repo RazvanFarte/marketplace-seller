@@ -125,10 +125,10 @@ export class MediaModalComponent implements OnInit, AfterViewInit {
       name: this.croppedFile.file.name
     })
       .then(resp => {
-        this.toasty.success('File has been cropped and uploaded');
+        this.toasty.success('Fisierul a fost decupat si incarcat');
         this.remove(this.croppedFile);
       })
-      .catch(e => this.toasty.error(e.data.message || 'Have error, please try again'));
+      .catch(e => this.toasty.error(e.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   search() {
@@ -156,7 +156,7 @@ export class MediaModalComponent implements OnInit, AfterViewInit {
       .then(resp => {
         this.toasty.success('Updated');
       })
-      .catch(err => this.toasty.error(err.data.message || 'Something went wrong!'));
+      .catch(err => this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 }
 

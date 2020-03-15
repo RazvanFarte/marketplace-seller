@@ -17,7 +17,7 @@ export class AccountUpdateComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
 
     this.accountService.findOne(id).then(resp => {
       this.account = resp.data;
@@ -27,16 +27,16 @@ export class AccountUpdateComponent implements OnInit {
   submit(frm) {
     this.isSubmitted = true;
     if (frm.$invalid) {
-      this.toasty.error('Invalid form, please try again.');
+      return this.toasty.error('Formularul este invalid, va rugam incercati din nou.');
     }
 
     if (this.account.type === 'paypal' && this.account.paypalAccount == '') {
-      return this.toasty.error('If you select type payout is paypal, please enter Paypal Account');
+      return this.toasty.error('Daca ati selectat Paypal ca modalitate de plata, va rugam sa introduceti contul de Paypal!');
     } else if (this.account.type === 'bank-account' && this.account.paypalAccount) {
       this.account.paypalAccount = '';
     }
 
-    let param = {
+    const param = {
       type: this.account.type,
       paypalAccount: this.account.paypalAccount,
       accountHolderName: this.account.accountHolderName,
@@ -49,10 +49,10 @@ export class AccountUpdateComponent implements OnInit {
       swiftCode: this.account.swiftCode,
       ifscCode: this.account.ifscCode,
       routingCode: this.account.routingCode
-    }
+    };
 
     this.accountService.update(this.account._id, param).then(resp => {
-      this.toasty.success('Updated successfully.');
-    })
+      this.toasty.success('Editarea a fost efectuata cu succes.');
+    });
   }
 }

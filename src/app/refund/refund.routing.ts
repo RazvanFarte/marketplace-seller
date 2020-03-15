@@ -7,8 +7,8 @@ const routes: Routes = [
     path: '',
     component: ListingComponent,
     data: {
-      title: 'Refund management',
-      urls: [{ title: 'Orders', url: '/orders/list' }, { title: 'Refund' }]
+      title: 'Manager de rambursari',
+      urls: [{ title: 'Comenzi', url: '/orders/list' }, { title: 'Rambursare' }]
     }
   }
 ];

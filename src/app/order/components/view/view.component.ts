@@ -20,7 +20,7 @@ export class ViewComponent implements OnInit {
     this.orderService.findOne(id).then((res) => {
       this.order = res.data;
       this.avatarUrl = res.data.productDetails.mainImage ? res.data.productDetails.mainImage.mediumUrl : '/assets/images/background/user-info.jpg';
-    })
+    });
   }
 
   ngOnInit() {
@@ -29,20 +29,20 @@ export class ViewComponent implements OnInit {
   submit(frm: any) {
     this.isSubmitted = true;
     if (!frm.valid) {
-      return this.toasty.error('Something went wrong, please check and try again!');
+      return this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!');
     }
     const data = _.pick(this.order, ['shippingMethod', 'shippingCode']);
 
     this.orderService.updateShipping(this.order._id, data).then(resp => {
-      this.toasty.success('Updated shipping type successfuly!');
+      this.toasty.success('Tipul de livrare a fost editat cu succes!');
     }).catch((err) =>
-    this.toasty.error('Something went wrong, please try again!'));
+    this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 
   query() {
     const data = _.pick(this.order, ['status']);
     this.orderService.updateStatus(this.order._id, data).then(resp => {
       this.toasty.success('Updated status successfuly!');
-    }).catch((err) => this.toasty.error('Something went wrong, please try again!'));
+    }).catch((err) => this.toasty.error('Ceva nu a mers, va rugam sa incercati din nou!'));
   }
 }

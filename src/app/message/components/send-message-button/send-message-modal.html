@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title" translate>Send message</h4>
+  <h4 class="modal-title" translate>Trimite mesaj</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -7,16 +7,16 @@
 <div class="modal-body">
   <form #frm="ngForm" (submit)="submit(frm)">
     <div class="form-group">
-      <textarea class="form-control" name="content" placeholder="{{'Leave your message' | translate}}" [(ngModel)]="message.text" #text="ngModel"></textarea>
+      <textarea class="form-control" name="content" placeholder="{{'Scrie mesaj' | translate}}" [(ngModel)]="message.text" #text="ngModel"></textarea>
       <div *ngIf="text.errors && (text.dirty || text.touched || submitted)">
         <p [hidden]="!text.errors.required" class="error" translate>
-          Message is required
+          Mesaj obligatoriu
         </p>
       </div>
     </div>
     <div class="form-group">
-      <button class="btn btn-success" type="submit" translate>Send</button>&nbsp;
-      <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Cancel</button>
+      <button class="btn btn-success" type="submit" translate>Trimite</button>&nbsp;
+      <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Anulează</button>
     </div>
 
   </form>

@@ -7,48 +7,48 @@
             <div class="row">
               <div class="col col-md-6">
                 <div class="form-group">
-                  <label>Name (*)</label>
-                  <input type="text" name="couponName" #couponName="ngModel" class="form-control" placeholder="Enter name"
+                  <label>Nume (*)</label>
+                  <input type="text" name="couponName" #couponName="ngModel" class="form-control" placeholder="Introdu nume"
                     [(ngModel)]="coupon.name" required />
                   <div *ngIf="couponName.errors && (couponName.dirty || couponName.touched || isSubmitted)">
                     <p [hidden]="!couponName.errors.required" class="required-text">
-                      Please enter coupon name!
+                      Introdu nume cupon
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col col-md-6">
                 <div class="form-group">
-                  <label>Code (*)</label>
-                  <input type="text" name="couponCode" #couponCode="ngModel" class="form-control" required placeholder="Enter code"
+                  <label>Cod (*)</label>
+                  <input type="text" name="couponCode" #couponCode="ngModel" class="form-control" required placeholder="Introdu cod"
                     [(ngModel)]="coupon.code" />
                   <div *ngIf="couponCode.errors && (couponCode.dirty || couponCode.touched || isSubmitted)">
                     <p [hidden]="!couponCode.errors.required" class="required-text">
-                      Please enter coupon code!
+                      Introdu cod cupon
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col col-md-4">
                 <div class="form-group">
-                  <label>Discount Percentage (*)</label>
+                  <label>Procentaj discount (*)</label>
                   <input type="number" name="discountPercentage" min="1" max="100" #discountPercentage="ngModel" class="form-control"
                     required [(ngModel)]="coupon.discountPercentage" />
                   <div *ngIf="discountPercentage.errors && (discountPercentage.dirty || discountPercentage.touched || isSubmitted)">
                     <p [hidden]="!discountPercentage.errors.required" class="required-text">
-                      Please enter discount percentage!
+                      Introdu procentaj discount
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col col-md-4">
                 <div class="form-group">
-                  <label>Limit (*)</label>
+                  <label>Limită (*)</label>
                   <input type="number" name="limit" min="0" #limit="ngModel" class="form-control" required [(ngModel)]="coupon.limit" />
-                  <small class="text-muted">If enter 0, it means Unlimited</small>
+                  <small class="text-muted">Dacă introduceți 0, înseamnă utilizare nelimitată</small>
                   <div *ngIf="limit.errors && (limit.dirty || limit.touched || isSubmitted)">
                     <p [hidden]="!limit.errors.required" class="required-text">
-                      Please enter coupon limit!
+                      Introdu limită cupon
                     </p>
                   </div>
                 </div>
@@ -56,9 +56,9 @@
 
               <div class="col col-md-4">
                 <div class="form-group">
-                  <label>Expired time (*)</label>
+                  <label>Valabilitate (*)</label>
                   <div class="input-group input-date">
-                    <input class="form-control br-l" placeholder="yyyy-mm-dd" name="expiredTime" [(ngModel)]="date"
+                    <input class="form-control br-l" placeholder="aaaa-ll-zz" name="expiredTime" [(ngModel)]="date"
                       ngbDatepicker #expiredTime="ngbDatepicker">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary fa fa-calendar br-r" (click)="expiredTime.toggle()" type="button"></button>
@@ -72,7 +72,7 @@
         <div class="col col-md-12">
           <div class="form-group">
             <hr />
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Trimite</button>
           </div>
         </div>
       </div>
