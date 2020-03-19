@@ -3,24 +3,24 @@
     <div class="card">
       <div class="card-body">
         <div class="nav flex-column nav-pills">
-          <a class="nav-link active" [ngClass]="{active: tab == 'basic'}" (click)="changeTab('basic')">Informații de bază</a>
+          <a class="nav-link active" [ngClass]="{active: tab == 'basic'}" (click)="changeTab('basic')">Informatii de baza</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'business'}" (click)="changeTab('business')">Informații afacere</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'business'}" (click)="changeTab('business')">Informatii afacere</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'social'}" (click)="changeTab('social')">Informații social media </a>
+          <a class="nav-link" [ngClass]="{active: tab == 'social'}" (click)="changeTab('social')">Informatii social media </a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'shipping'}" (click)="changeTab('shipping')">Informații livrare</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'shipping'}" (click)="changeTab('shipping')">Informatii livrare</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'notification'}" (click)="changeTab('notification')">Informații notificări</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'notification'}" (click)="changeTab('notification')">Informatii notificari</a>
 
-          <a class="nav-link" [ngClass]="{active: tab == 'bank'}" (click)="changeTab('bank')">Informații bancă</a>
+          <a class="nav-link" [ngClass]="{active: tab == 'bank'}" (click)="changeTab('bank')">Informatii banca</a>
 
           <a class="nav-link" [ngClass]="{active: tab == 'review'}" (click)="changeTab('review')">Recenzii de la utilizator</a>
         </div>
 
         <hr />
 
-        <h3>Verifică cont</h3>
+        <h3>Verifica cont</h3>
         <p>
           <strong>Facebook: </strong> {{socialConnected?.facebook ? 'Verificat' : 'Nu a fost verificat'}} <br />
           <strong>Google: </strong> {{socialConnected?.google ? 'Verificat' : 'Nu a fost verificat'}} <br />

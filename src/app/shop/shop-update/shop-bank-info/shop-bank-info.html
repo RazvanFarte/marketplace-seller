@@ -2,44 +2,44 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <label>Nume bancă (*)</label>
-        <input type="text" class="form-control" placeholder="Introdu nume bancă" [(ngModel)]="shop.bankInfo.bankName" required name="bankName" #bankName="ngModel"/>
+        <label>Nume banca (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu nume banca" [(ngModel)]="shop.bankInfo.bankName" required name="bankName" #bankName="ngModel"/>
         <div *ngIf="bankName.errors && (bankName.dirty || bankName.touched || isSubmitted)">
             <p [hidden]="!bankName.errors.required" class="required-text">
-              Introdu nume bancă!
+              Introdu nume banca!
             </p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>ID bancă (*)</label>
-        <input type="text" class="form-control" placeholder="Introdu ID bancă" [(ngModel)]="shop.bankInfo.bankId" required name="bankId" #bankId="ngModel"/>
+        <label>ID banca (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu ID banca" [(ngModel)]="shop.bankInfo.bankId" required name="bankId" #bankId="ngModel"/>
         <div *ngIf="bankId.errors && (bankId.dirty || bankId.touched || isSubmitted)">
           <p [hidden]="!bankId.errors.required" class="required-text">
-            Introdu ID bancă!
+            Introdu ID banca!
           </p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Nume unitate bancă (*)</label>
-        <input type="text" class="form-control" placeholder="Introdu nume unitate bancă" [(ngModel)]="shop.bankInfo.bankBranchName" required name="bankBranchName" #bankBranchName="ngModel"/>
+        <label>Nume unitate banca (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu nume unitate banca" [(ngModel)]="shop.bankInfo.bankBranchName" required name="bankBranchName" #bankBranchName="ngModel"/>
         <div *ngIf="bankBranchName.errors && (bankBranchName.dirty || bankBranchName.touched || isSubmitted)">
           <p [hidden]="!bankBranchName.errors.required" class="required-text">
-            Introdu nume unitate bancă!
+            Introdu nume unitate banca!
           </p>
         </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>ID unitate bancă (*)</label>
-        <input type="text" class="form-control" placeholder="Introdu ID unitate bancă" [(ngModel)]="shop.bankInfo.bankBranchId" required name="bankBranchId" #bankBranchId="ngModel"/>
+        <label>ID unitate banca (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu ID unitate banca" [(ngModel)]="shop.bankInfo.bankBranchId" required name="bankBranchId" #bankBranchId="ngModel"/>
         <div *ngIf="bankBranchId.errors && (bankBranchId.dirty || bankBranchId.touched || isSubmitted)">
           <p [hidden]="!bankBranchId.errors.required" class="required-text">
-            Introdu ID unitate bancă!
+            Introdu ID unitate banca!
           </p>
         </div>
       </div>
@@ -57,17 +57,17 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Număr cont (*)</label>
-        <input type="text" class="form-control" placeholder="Introdu număr cont" [minlength]="11" [maxlength]="30" [(ngModel)]="shop.bankInfo.accountNumber" pattern="[a-zA-Z0-9]+" required name="accountNumber" #accountNumber="ngModel"/>
+        <label>Numar cont (*)</label>
+        <input type="text" class="form-control" placeholder="Introdu numar cont" [minlength]="11" [maxlength]="30" [(ngModel)]="shop.bankInfo.accountNumber" pattern="[a-zA-Z0-9]+" required name="accountNumber" #accountNumber="ngModel"/>
         <div *ngIf="accountNumber.errors && (accountNumber.dirty || accountNumber.touched || isSubmitted)">
           <p [hidden]="!accountNumber.errors.required" class="required-text">
-            Introdu număr cont!
+            Introdu numar cont!
           </p>
           <p [hidden]="!accountNumber.errors.pattern" class="required-text">
-              Număr cont conține doar caractere alfanumerice
+              Numar cont contine doar caractere alfanumerice
             </p>
             <p [hidden]="!accountNumber.errors.minlength" class="error" translate>
-              Număr cont trebuie să conțină cel puțin 11 caractere
+              Numar cont trebuie sa contina cel putin 11 caractere
             </p>
         </div>
       </div>
@@ -81,17 +81,17 @@
               Introdu cod swift!
             </p>
             <p [hidden]="!swiftCode.errors.pattern" class="required-text">
-              Codul Swift conține doar caractere alfanumerice
+              Codul Swift contine doar caractere alfanumerice
             </p>
             <p [hidden]="!swiftCode.errors.minlength" class="error" translate>
-              Cod Swift trebuie să aive 8 sau 11 caractere
+              Cod Swift trebuie sa aive 8 sau 11 caractere
             </p>
         </div>
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Salvează</button>
+        <button class="btn btn-primary" type="submit">Salveaza</button>
       </div>
     </div>
   </div>

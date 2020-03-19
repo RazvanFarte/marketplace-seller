@@ -25,7 +25,7 @@
             </span>
           </th>
           <th>
-            <a (click)="sortBy('limit', 'desc')">Limită&nbsp;</a>
+            <a (click)="sortBy('limit', 'desc')">Limita&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='limit'">
               <a (click)="sortBy('limit', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('limit', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -45,12 +45,12 @@
               <a (click)="sortBy('createdAt', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
-          <th>Acțiune</th>
+          <th>Actiune</th>
         </tr>
         <tr>
           <th>
             <div class="input-group">
-              <input class="form-control" [(ngModel)]="searchText" placeholder="Caută..." (keypress)="keyPress($event)" />
+              <input class="form-control" [(ngModel)]="searchText" placeholder="Cauta..." (keypress)="keyPress($event)" />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary fa fa-search" (click)="query()" type="button"></button>
               </div>
@@ -63,7 +63,7 @@
       <tbody>
         <tr *ngIf="!total">
           <td colspan="7">
-            <p class="text-center text-danger">Nu există date..</p>
+            <p class="text-center text-danger">Nu exista date..</p>
           </td>
         </tr>
         <tr *ngFor="let item of coupons, let i = index">

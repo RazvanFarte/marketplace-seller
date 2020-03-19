@@ -36,48 +36,48 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Nume deținator (*)</label>
+                <label>Nume detinator (*)</label>
                 <input type="text" name="accountHolderName" #accountHolderName="ngModel" class="form-control"
-                  placeholder="Introdu nume deținator" [(ngModel)]="account.accountHolderName" required />
+                  placeholder="Introdu nume detinator" [(ngModel)]="account.accountHolderName" required />
                 <div *ngIf="accountHolderName.errors && (accountHolderName.dirty || accountHolderName.touched || isSubmitted)">
                   <p [hidden]="!accountHolderName.errors.required" class="required-text">
-                    Introdu nume deținator!
+                    Introdu nume detinator!
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Număr cont (*)</label>
-                <input type="text" name="accountNumber" #accountNumber="ngModel" class="form-control" placeholder="Introdu număr cont"
+                <label>Numar cont (*)</label>
+                <input type="text" name="accountNumber" #accountNumber="ngModel" class="form-control" placeholder="Introdu numar cont"
                   [(ngModel)]="account.accountNumber" required />
                 <div *ngIf="accountNumber.errors && (accountNumber.dirty || accountNumber.touched || isSubmitted)">
                   <p [hidden]="!accountNumber.errors.required" class="required-text">
-                    Introdu număr cont!
+                    Introdu numar cont!
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Nume bancă (*)</label>
-                <input type="text" name="bankName" #bankName="ngModel" class="form-control" placeholder="Introdu nume bancă"
+                <label>Nume banca (*)</label>
+                <input type="text" name="bankName" #bankName="ngModel" class="form-control" placeholder="Introdu nume banca"
                   [(ngModel)]="account.bankName" required />
                 <div *ngIf="bankName.errors && (bankName.dirty || bankName.touched || isSubmitted)">
                   <p [hidden]="!bankName.errors.required" class="required-text">
-                    Introdu nume bancă!
+                    Introdu nume banca!
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Adresă bancă (*)</label>
-                <input type="text" name="bankAddress" #bankAddress="ngModel" class="form-control" placeholder="Introdu adresă bancă"
+                <label>Adresa banca (*)</label>
+                <input type="text" name="bankAddress" #bankAddress="ngModel" class="form-control" placeholder="Introdu adresa banca"
                   [(ngModel)]="account.bankAddress" required />
                 <div *ngIf="bankAddress.errors && (bankAddress.dirty || bankAddress.touched || isSubmitted)">
                   <p [hidden]="!bankAddress.errors.required" class="required-text">
-                    Introdu adresă bancă!
+                    Introdu adresa banca!
                   </p>
                 </div>
               </div>
@@ -96,31 +96,31 @@
                   placeholder="Introdu cod SWIFT" [(ngModel)]="account.swiftCode" />
                 <div *ngIf="routingNumber.errors && (routingNumber.dirty || routingNumber.touched || isSubmitted)">
                   <p [hidden]="!routingNumber.errors.minlength" class="error" translate>
-                    Codul SWIFT trebuie să aive 8 sau 11 caractere
+                    Codul SWIFT trebuie sa aive 8 sau 11 caractere
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Cod bancă Marea Britanie (6 caractere)</label>
+                <label>Cod banca Marea Britanie (6 caractere)</label>
                 <input type="text" name="sortCode" #sortCode="ngModel" [minlength]="6" [maxlength]="6" class="form-control"
                   placeholder="Introdu cod" [(ngModel)]="account.sortCode" />
                 <div *ngIf="sortCode.errors && (sortCode.dirty || sortCode.touched || isSubmitted)">
                   <p [hidden]="!sortCode.errors.minlength" class="error" translate>
-                    Cod bancă Marea Britanie trebuise să aive 6 caractere
+                    Cod banca Marea Britanie trebuise sa aive 6 caractere
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Număr asociația bancherilor Americani  (9 caractere)</label>
+                <label>Numar asociatia bancherilor Americani  (9 caractere)</label>
                 <input type="text" name="routingNumber" #routingNumber="ngModel" [minlength]="9" [maxlength]="9" class="form-control"
-                  placeholder="Introdu număr" [(ngModel)]="account.routingNumber" />
+                  placeholder="Introdu numar" [(ngModel)]="account.routingNumber" />
                 <div *ngIf="routingNumber.errors && (routingNumber.dirty || routingNumber.touched || isSubmitted)">
                   <p [hidden]="!routingNumber.errors.minlength" class="error" translate>
-                    Număr asociația bancherilor Americani trebuie să aive 9 caractere
+                    Numar asociatia bancherilor Americani trebuie sa aive 9 caractere
                   </p>
                 </div>
               </div>
@@ -132,14 +132,14 @@
                   placeholder="Introdu cod" [(ngModel)]="account.ifscCode" />
                 <div *ngIf="ifscCode.errors && (ifscCode.dirty || ifscCode.touched || isSubmitted)">
                   <p [hidden]="!ifscCode.errors.minlength" class="error" translate>
-                    Codul sistem financiar Indian trebuie să aive 11 caractere
+                    Codul sistem financiar Indian trebuie sa aive 11 caractere
                   </p>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Orice altă bancă locală</label>
+                <label>Orice alta banca locala</label>
                 <input type="text" name="routingCode" #routingCode="ngModel" class="form-control" placeholder="Introdu cod"
                   [(ngModel)]="account.routingCode" />
               </div>
@@ -151,7 +151,7 @@
             <hr />
             <button type="submit" class="btn btn-primary">Trimite</button>
             &nbsp;
-            <a class="btn btn-warning" [routerLink]="'/payout/account'" translate>Anulează</a>&nbsp;
+            <a class="btn btn-warning" [routerLink]="'/payout/account'" translate>Anuleaza</a>&nbsp;
           </div>
         </div>
       </div>

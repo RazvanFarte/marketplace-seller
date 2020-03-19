@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card-body">
     <div style="background: beige; padding: 10px; margin-bottom: 20px">
-      <h4>Sumar balanță: {{balance?.summary?.balance | currency}}</h4>
-      <h4>Balanță ramburs: {{balance?.cod?.balance | currency}}</h4>
-      <h4>Balanță non-ramburs: {{balance?.nonCod?.balance | currency}}</h4>
+      <h4>Sumar balanta: {{balance?.summary?.balance | currency}}</h4>
+      <h4>Balanta ramburs: {{balance?.cod?.balance | currency}}</h4>
+      <h4>Balanta non-ramburs: {{balance?.nonCod?.balance | currency}}</h4>
     </div>
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label>Introdu cont de plată (*)</label>
+          <label>Introdu cont de plata (*)</label>
           <select [(ngModel)]="payoutAccountId" class="form-control" required>
             <option *ngFor="let item of accounts" [value]="item._id">
               <span *ngIf="item.type === 'bank-account'">Banca - {{item?.bankName}} - {{item?.accountNumber}}</span>

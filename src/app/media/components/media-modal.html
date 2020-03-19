@@ -7,10 +7,10 @@
 <div class="modal-body">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'library'}" (click)="changeTab('library')">Bibliotecă media</a>
+      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'library'}" (click)="changeTab('library')">Biblioteca media</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'upload'}" (click)="changeTab('upload')">Încărcare media</a>
+      <a class="nav-link" data-toggle="tab" [ngClass]="{active: tab === 'upload'}" (click)="changeTab('upload')">Incarcare media</a>
     </li>
   </ul>
   <div class="row" *ngIf="tab === 'library'">
@@ -32,7 +32,7 @@
               <input type="text" class="form-control" placeholder="Introdu descriere" [(ngModel)]="keyword.description" name="desc" />
             </th>
             <th>
-              <button class="btn btn-outline-secondary" type="submit" (click)="search()">Caută</button>
+              <button class="btn btn-outline-secondary" type="submit" (click)="search()">Cauta</button>
             </th>
           </tr>
         </thead>
@@ -64,22 +64,22 @@
           <media-preview [media]="activeEditMedia"></media-preview>
         </div>
         <div class="form-group">
-          <label>Legătură</label>
+          <label>Legatura</label>
           <input type="text" class="form-control" [ngModel]="activeEditMedia.fileUrl" disabled name="url" />
         </div>
         <div class="form-group">
-          <label>Nume fișier (*)</label>
-          <input type="text" class="form-control" placeholder="Introdu nume fișier media" [(ngModel)]="activeEditMedia.name" required #name="ngModel" name="name" />
+          <label>Nume fisier (*)</label>
+          <input type="text" class="form-control" placeholder="Introdu nume fisier media" [(ngModel)]="activeEditMedia.name" required #name="ngModel" name="name" />
           <div *ngIf="name.errors && (name.dirty || name.touched || submitted)">
             <p [hidden]="!name.errors.required" class="error">
-              Nume fișier obligatoriu
+              Nume fisier obligatoriu
             </p>
           </div>
         </div>
         <div class="form-group">
           <textarea class="form-control" placeholder="Introdu descriere" [(ngModel)]="activeEditMedia.description" #desc="ngModel" name="desc"></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-dark pull-right">Actualizează</button>
+        <button type="submit" class="btn btn-outline-dark pull-right">Actualizeaza</button>
       </form>
     </div>
   </div>
@@ -109,7 +109,7 @@
             <td>{{media?.name}}</td>
             <td>{{media?.description}}</td>
             <td>
-              <span class="pointer" (click)="select(media)">Selectează</span>
+              <span class="pointer" (click)="select(media)">Selecteaza</span>
             </td>
           </tr>
           <tr *ngFor="let file of filesQueue">
@@ -140,5 +140,5 @@
   </div>
 </div>
 <div class="modal-footer" *ngIf="activeEditMedia">
-  <button type="button" class="btn btn-primary" (click)="select(activeEditMedia)">Selectează</button>
+  <button type="button" class="btn btn-primary" (click)="select(activeEditMedia)">Selecteaza</button>
 </div>

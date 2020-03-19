@@ -11,22 +11,22 @@
         <h5 class="text-highlight m-t-10">
           <span *ngIf="type === 'order'"><a [routerLink]="['/orders/list']">Comenzi </a></span>
           <span *ngIf="type === 'product'"><a [routerLink]="['/products/list']">Produse </a></span>
-          <span *ngIf="type === 'sale'"><a [routerLink]="['/orders/list']">Vânzari totale</a></span>
+          <span *ngIf="type === 'sale'"><a [routerLink]="['/orders/list']">Vanzari totale</a></span>
         </h5>
         <div *ngIf="type === 'order'" class="mobile-stat-block">
           <p class="inline-block">
             <span class="label label-danger">{{stat?.all}}</span>&nbsp;<strong>Total</strong>
           </p>
           <p class="inline-block">
-            <span class="pull-left"><span class="label label-success">{{stat?.completed}}</span>&nbsp;<strong>Completată</strong></span>
-            <span class="pull-right"><strong>În curs de livrare</strong>&nbsp;<span class="label label-success">{{stat?.shipping}}</span></span>
+            <span class="pull-left"><span class="label label-success">{{stat?.completed}}</span>&nbsp;<strong>Completata</strong></span>
+            <span class="pull-right"><strong>In curs de livrare</strong>&nbsp;<span class="label label-success">{{stat?.shipping}}</span></span>
           </p>
           <p class="inline-block">
-            <span class="pull-left"><span class="label label-info">{{stat?.pending}}</span>&nbsp;<strong>În așteptare</strong></span>
-            <span class="pull-right"><strong>În progres</strong>&nbsp;<span class="label label-info">{{stat?.progressing}}</span></span>
+            <span class="pull-left"><span class="label label-info">{{stat?.pending}}</span>&nbsp;<strong>In asteptare</strong></span>
+            <span class="pull-right"><strong>In progres</strong>&nbsp;<span class="label label-info">{{stat?.progressing}}</span></span>
           </p>
           <p class="inline-block">
-            <span class="pull-left"><span class="label label-warning">{{stat?.refunded}}</span>&nbsp;<strong>Returnată</strong></span>
+            <span class="pull-left"><span class="label label-warning">{{stat?.refunded}}</span>&nbsp;<strong>Returnata</strong></span>
             <span class="pull-right"><strong>Anulat</strong>&nbsp;<span class="label label-warning">{{stat?.cancelled}}</span></span>
           </p>
         </div>
@@ -39,7 +39,7 @@
 
         <div *ngIf="type === 'sale'" class="mobile-stat-block">
           <p class="inline-block">
-            <span class="label label-danger no-wrap">{{stat?.balance | currency:'ZK '}}</span>&nbsp;<strong>Balanță</strong>
+            <span class="label label-danger no-wrap">{{stat?.balance | currency:'ZK '}}</span>&nbsp;<strong>Balanta</strong>
           </p>
           <p class="inline-block">
             <span class="label label-info no-wrap">{{stat?.commission | currency:'ZK '}}</span>&nbsp;<strong>Comision</strong>
@@ -48,7 +48,7 @@
             <span class="label label-info no-wrap">{{stat?.taxPrice | currency:'ZK '}}</span>&nbsp;<strong>Taxe</strong>
           </p>
           <p class="inline-block">
-            <span class="label label-warning no-wrap">{{stat?.totalPrice | currency:'ZK '}}</span>&nbsp;<strong>Preț Total</strong>
+            <span class="label label-warning no-wrap">{{stat?.totalPrice | currency:'ZK '}}</span>&nbsp;<strong>Pret Total</strong>
           </p>
           <p class="inline-block">
             <span class="label label-warning">{{stat?.totalProduct}}</span>&nbsp;<strong>Total Produs</strong>

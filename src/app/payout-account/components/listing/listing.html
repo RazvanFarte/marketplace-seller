@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th>
-            <a (click)="sortBy('accountHolderName', 'desc')">Nume deținător&nbsp;</a>
+            <a (click)="sortBy('accountHolderName', 'desc')">Nume detinator&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='accountHolderName'">
               <a (click)="sortBy('accountHolderName', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('accountHolderName', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -25,21 +25,21 @@
             </span>
           </th>
           <th>
-            <a (click)="sortBy('accountNumber', 'desc')">Număr cont&nbsp;</a>
+            <a (click)="sortBy('accountNumber', 'desc')">Numar cont&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='accountNumber'">
               <a (click)="sortBy('accountNumber', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('accountNumber', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('bankName', 'desc')">Nume bancă&nbsp;</a>
+            <a (click)="sortBy('bankName', 'desc')">Nume banca&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='bankName'">
               <a (click)="sortBy('bankName', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('bankName', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('bankAddress', 'desc')">Adresă bancă&nbsp;</a>
+            <a (click)="sortBy('bankAddress', 'desc')">Adresa banca&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='bankAddress'">
               <a (click)="sortBy('bankAddress', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('bankAddress', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -67,7 +67,7 @@
             </span>
           </th>
           <th>
-            <a (click)="sortBy('routingNumber', 'desc')">Număr ABA&nbsp;</a>
+            <a (click)="sortBy('routingNumber', 'desc')">Numar ABA&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='routingNumber'">
               <a (click)="sortBy('routingNumber', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('routingNumber', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -94,7 +94,7 @@
               <a (click)="sortBy('createdAt', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
-          <th>Acțiune</th>
+          <th>Actiune</th>
         </tr>
         <tr>
           <th></th>
@@ -114,7 +114,7 @@
       <tbody>
         <tr *ngIf="!total">
           <td colspan="14">
-            <p class="text-center text-danger">Nu există date..</p>
+            <p class="text-center text-danger">Nu exista date..</p>
           </td>
         </tr>
         <tr *ngFor="let item of accounts, let i = index">

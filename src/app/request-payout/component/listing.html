@@ -2,7 +2,7 @@
   <div class="row" style="padding: 25px">
     <div class="col-md-3">
       <div class="input-group input-date">
-        <span class="text-center">Data început:</span>&nbsp;
+        <span class="text-center">Data inceput:</span>&nbsp;
         <input class="form-control br-l" placeholder="aaaa-ll-zz" name="startDate" [(ngModel)]="dateFilter.startDate"
           ngbDatepicker #startDate="ngbDatepicker">
         <div class="input-group-append">
@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-3">
       <div class="input-group input-date">
-        <span>Data sfârșit:</span>&nbsp;
+        <span>Data sfarsit:</span>&nbsp;
         <input class="form-control br-l" placeholder="aaaa-ll-zz" name="toDate" [(ngModel)]="dateFilter.toDate"
           ngbDatepicker #toDate="ngbDatepicker">
         <div class="input-group-append">
@@ -20,27 +20,27 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3"><a class="btn btn-success" (click)="queryStats()">Statistici pentru perioada selectată</a></div>
+    <div class="col-md-3"><a class="btn btn-success" (click)="queryStats()">Statistici pentru perioada selectata</a></div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group" style="padding: 25px; padding-bottom: 0">
-        <label>În așteptare</label>
+        <label>In asteptare</label>
         <h4>Comision: {{stats?.pending?.commission | currency}}</h4>
-        <h4>Balanță magazin: {{stats?.pending?.shopBalance | currency}}</h4>
-        <h4>Balanță site: {{stats?.pending?.siteBalance | currency}}</h4>
-        <h4>Balanță ramburs: {{stats?.pending?.codBalance | currency}}</h4>
-        <h4>Balanță non-ramburs: {{stats?.pending?.nonCodBalance | currency}}</h4>
+        <h4>Balanta magazin: {{stats?.pending?.shopBalance | currency}}</h4>
+        <h4>Balanta site: {{stats?.pending?.siteBalance | currency}}</h4>
+        <h4>Balanta ramburs: {{stats?.pending?.codBalance | currency}}</h4>
+        <h4>Balanta non-ramburs: {{stats?.pending?.nonCodBalance | currency}}</h4>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group" style="padding: 25px; padding-bottom: 0">
         <label>Aprobat</label>
         <h4>Comision: {{stats?.approved?.commission | currency}}</h4>
-        <h4>Balanță magazin: {{stats?.approved?.shopBalance | currency}}</h4>
-        <h4>Balanță site: {{stats?.approved?.siteBalance | currency}}</h4>
-        <h4>Balanță ramburs: {{stats?.approved?.codBalance | currency}}</h4>
-        <h4>Balanță non-ramburs: {{stats?.approved?.nonCodBalance | currency}}</h4>
+        <h4>Balanta magazin: {{stats?.approved?.shopBalance | currency}}</h4>
+        <h4>Balanta site: {{stats?.approved?.siteBalance | currency}}</h4>
+        <h4>Balanta ramburs: {{stats?.approved?.codBalance | currency}}</h4>
+        <h4>Balanta non-ramburs: {{stats?.approved?.nonCodBalance | currency}}</h4>
       </div>
     </div>
   </div>
@@ -63,35 +63,35 @@
             </span>
           </th>
           <th>
-            <a (click)="sortBy('shopBalance', 'desc')">Balanță magazin</a>
+            <a (click)="sortBy('shopBalance', 'desc')">Balanta magazin</a>
             <span *ngIf="sortOption.sortBy=='shopBalance'">
               <a (click)="sortBy('shopBalance', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('shopBalance', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('siteBalance', 'desc')">Balanță site</a>
+            <a (click)="sortBy('siteBalance', 'desc')">Balanta site</a>
             <span *ngIf="sortOption.sortBy=='siteBalance'">
               <a (click)="sortBy('siteBalance', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('siteBalance', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('codBalance', 'desc')">Balanță ramburs</a>
+            <a (click)="sortBy('codBalance', 'desc')">Balanta ramburs</a>
             <span *ngIf="sortOption.sortBy=='codBalance'">
               <a (click)="sortBy('codBalance', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('codBalance', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('nonCodBalance', 'desc')">Balanță non-ramburs</a>
+            <a (click)="sortBy('nonCodBalance', 'desc')">Balanta non-ramburs</a>
             <span *ngIf="sortOption.sortBy=='nonCodBalance'">
               <a (click)="sortBy('nonCodBalance', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('nonCodBalance', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('paidToShop', 'desc')">Plătit</a>
+            <a (click)="sortBy('paidToShop', 'desc')">Platit</a>
             <span *ngIf="sortOption.sortBy=='paidToShop'">
               <a (click)="sortBy('paidToShop', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('paidToShop', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -116,7 +116,7 @@
       <tbody>
         <tr *ngIf="!total">
           <td colspan="8">
-            <p class="text-center text-danger">Nu există date..</p>
+            <p class="text-center text-danger">Nu exista date..</p>
           </td>
         </tr>
         <tr *ngFor="let item of items, let i = index">
@@ -139,7 +139,7 @@
           <td>
             <span *ngIf="item.status ==='approved'" class="label label-success">Aprobat</span>
             <span *ngIf="item.status ==='rejected'" class="label label-danger">Respins</span>
-            <span *ngIf="item.status ==='pending'" class="label label-warning">În așteptare</span>
+            <span *ngIf="item.status ==='pending'" class="label label-warning">In asteptare</span>
           </td>
           <!-- <td>{{item?.requestToTime | date}}</td> -->
           <td>{{item?.createdAt | date}}</td>

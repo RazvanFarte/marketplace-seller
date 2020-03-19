@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-md-12" *ngIf="!total && !isLoading">
-        <p class="text-center text-danger">Nu există date..</p>
+        <p class="text-center text-danger">Nu exista date..</p>
       </div>
       <div class="col-md-4" *ngFor="let item of packages">
         <div class="card mb-4 shadow-sm">
@@ -20,7 +20,7 @@
               {{item?.description | slice:0:100}}{{item?.description.length > 100 ? '...' : ''}}
               <span>{{item?.description}}</span>
             </div>
-            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="payment(item)">Cumpără Pachet</button>
+            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="payment(item)">Cumpara Pachet</button>
           </div>
         </div>
       </div>

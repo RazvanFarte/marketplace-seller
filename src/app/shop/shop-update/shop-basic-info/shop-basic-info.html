@@ -19,26 +19,26 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Adresă</label>
-        <input type="text" class="form-control" placeholder="Introdu adresă" [(ngModel)]="shop.address" name="address" #address="ngModel" />
+        <label>Adresa</label>
+        <input type="text" class="form-control" placeholder="Introdu adresa" [(ngModel)]="shop.address" name="address" #address="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Oraș</label>
-        <input type="text" class="form-control" placeholder="Introdu oraș" [(ngModel)]="shop.city" name="city" #city="ngModel" />
+        <label>Oras</label>
+        <input type="text" class="form-control" placeholder="Introdu oras" [(ngModel)]="shop.city" name="city" #city="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Județ</label>
-        <input type="text" class="form-control" placeholder="Introdu județ" [(ngModel)]="shop.state" name="state" #state="ngModel" />
+        <label>Judet</label>
+        <input type="text" class="form-control" placeholder="Introdu judet" [(ngModel)]="shop.state" name="state" #state="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Țară</label>
-        <input type="text" class="form-control" placeholder="Introdu țară" [(ngModel)]="shop.country" name="country" #country="ngModel" />
+        <label>Tara</label>
+        <input type="text" class="form-control" placeholder="Introdu tara" [(ngModel)]="shop.country" name="country" #country="ngModel" />
       </div>
     </div>
     <div class="col-md-6">
@@ -56,20 +56,20 @@
           Adresa de email obligatorie.
         </p>
         <p [hidden]="!email.errors.pattern" class="required-text">
-          Introdu adresă de email validă.
+          Introdu adresa de email valida.
         </p>
       </div>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <label>Numărul de telefon</label>
-        <input type="text" class="form-control" placeholder="Introdu numărul de telefon" [(ngModel)]="shop.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" />
+        <label>Numarul de telefon</label>
+        <input type="text" class="form-control" placeholder="Introdu numarul de telefon" [(ngModel)]="shop.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" />
       </div>
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Adresă de returnare</label>
+        <label>Adresa de returnare</label>
         <input type="text" class="form-control" placeholder="Introdu adresa de returnare" [(ngModel)]="shop.returnAddress" name="returnAddress" />
       </div>
     </div>
@@ -81,7 +81,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Anunț</label>
+        <label>Anunt</label>
         <textarea type="text" class="form-control" placeholder="Introdu text" [(ngModel)]="shop.announcement" name="announcement" cols="3"></textarea>
       </div>
     </div>
@@ -99,7 +99,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <label>Problemă la verificarea magazinului <media-select (onSelect)="selectVerificationIssue($event)"></media-select></label><br />
+        <label>Problema la verificarea magazinului <media-select (onSelect)="selectVerificationIssue($event)"></media-select></label><br />
         <a href="{{shop?.verificationIssue?.fileUrl}}" download target="_blank">{{shop?.verificationIssue?.name}}</a>
       </div>
     </div>
@@ -111,7 +111,7 @@
     </div>
     <div class="col-md-12">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Salvează</button>
+        <button class="btn btn-primary" type="submit">Salveaza</button>
       </div>
     </div>
   </div>

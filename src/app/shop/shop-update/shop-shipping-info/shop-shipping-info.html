@@ -2,24 +2,24 @@
   <div class="row">
     <div class="col col-md-6">
       <div class="form-group">
-        <label>Preț implitic (*)</label>
+        <label>Pret implitic (*)</label>
         <input type="number" name="defaultPrice" min="0" step="0.1" class="form-control" [(ngModel)]="shop.shippingSettings.defaultPrice"
           required #defaultPrice="ngModel" />
         <div *ngIf="defaultPrice.errors && (defaultPrice.dirty || defaultPrice.touched || isSubmitted)">
           <p [hidden]="!defaultPrice.errors.required" class="required-text">
-            Prețul implitic obligatoriu!
+            Pretul implitic obligatoriu!
           </p>
         </div>
       </div>
     </div>
     <div class="col col-md-6">
       <div class="form-group">
-        <label>Preț per U.M. (*)</label>
+        <label>Pret per U.M. (*)</label>
         <input type="number" name="perQuantityPrice" min="0" step="0.1" class="form-control" [(ngModel)]="shop.shippingSettings.perQuantityPrice"
           required #perQuantityPrice="ngModel" />
         <div *ngIf="perQuantityPrice.errors && (perQuantityPrice.dirty || perQuantityPrice.touched || isSubmitted)">
           <p [hidden]="!perQuantityPrice.errors.required" class="required-text">
-            Prețul per U.M. obligatoriu!
+            Pretul per U.M. obligatoriu!
           </p>
         </div>
       </div>
@@ -32,14 +32,14 @@
         </select>
         <div *ngIf="shipFrom.errors && (shipFrom.dirty || shipFrom.touched || isSubmitted)">
           <p [hidden]="!shipFrom.errors.required" class="required-text">
-            Câmp obligatoriu!
+            Camp obligatoriu!
           </p>
         </div>
       </div>
     </div>
     <div class="col col-md-6">
       <div class="form-group">
-        <label>Perioadă livrare (*)</label>
+        <label>Perioada livrare (*)</label>
         <select class="form-control" name="processingTime" [(ngModel)]="shop.shippingSettings.processingTime" required
           #processingTime="ngModel">
           <option value="one2Three">1-3 zile lucratoare</option>
@@ -49,7 +49,7 @@
         </select>
         <div *ngIf="processingTime.errors && (processingTime.dirty || processingTime.touched || isSubmitted)">
           <p [hidden]="!processingTime.errors.required" class="required-text">
-            Perioadă livrare obligatorie!
+            Perioada livrare obligatorie!
           </p>
         </div>
       </div>
@@ -68,12 +68,12 @@
     </div>
     <div class="col col-md-12">
       <div class="form-group">
-        <label>Politică returnare (*)</label>
-        <textarea name="refundPolicy" rows="3" class="form-control" placeholder="Introdu politică returnare" [(ngModel)]="shop.shippingSettings.refundPolicy"
+        <label>Politica returnare (*)</label>
+        <textarea name="refundPolicy" rows="3" class="form-control" placeholder="Introdu politica returnare" [(ngModel)]="shop.shippingSettings.refundPolicy"
           #refundPolicy="ngModel" required></textarea>
         <div *ngIf="refundPolicy.errors && (refundPolicy.dirty || refundPolicy.touched || isSubmitted)">
           <p [hidden]="!refundPolicy.errors.required" class="required-text">
-            Politică returnare obligatorie!
+            Politica returnare obligatorie!
           </p>
         </div>
       </div>
@@ -81,12 +81,12 @@
     <div class="col col-md-12">
       <div class="form-group">
         <label><input type="checkbox" name="storeWideShipping [(ngModel)]="shop.storeWideShipping #storeWideLivrare="ngModel" />
-          Livrare întreg magazinul</label>
+          Livrare intreg magazinul</label>
       </div>
     </div>
     <div class="col col-md-12">
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">Salvează</button>
+        <button class="btn btn-primary" type="submit">Salveaza</button>
       </div>
     </div>
   </div>

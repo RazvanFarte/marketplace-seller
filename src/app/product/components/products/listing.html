@@ -3,15 +3,15 @@
     <div class="row">
       <div class="col-md-4">
         <a class="btn btn-danger button-custom" href="../../../../assets/Sample.csv" download><i class="fa fa-file"></i>
-          Fișier demonstrativ</a>
+          Fisier demonstrativ</a>
       </div>
       <div class="col-md-4">
         <a class="btn btn-danger button-custom" (click)="exportCSV()" style="color: #fff"><i class="fa fa-cloud-download"></i>
-          Exportează date</a>
+          Exporteaza date</a>
       </div>
       <div class="col-md-4">
         <a class="btn btn-danger button-custom">
-          <span (click)="openFile()" style="color: #fff"><i class="fa fa-cloud-upload"></i> Importează date</span>
+          <span (click)="openFile()" style="color: #fff"><i class="fa fa-cloud-upload"></i> Importeaza date</span>
           <div class="import-button" *ngIf="showImport">
             <file-upload [options]="importOptions"></file-upload>
           </div>
@@ -53,7 +53,7 @@
             </span>
           </th>
           <th>
-            <a (click)="sortBy('bestSell', 'desc')">Cel mai bine vândut</a>
+            <a (click)="sortBy('bestSell', 'desc')">Cel mai bine vandut</a>
             <span *ngIf="sortOption.sortBy=='bestSell'">
               <a (click)="sortBy('bestSell', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('bestSell', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -81,14 +81,14 @@
             </span>
           </th>
           <th>
-            Acțiune
+            Actiune
           </th>
         </tr>
         <tr>
           <th class="min-w-40"></th>
           <th>
             <div class="input-group">
-              <input class="form-control" [(ngModel)]="searchText" placeholder="Caută..." (keypress)="keyPress($event)" />
+              <input class="form-control" [(ngModel)]="searchText" placeholder="Cauta..." (keypress)="keyPress($event)" />
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary fa fa-search" (click)="query()" type="button"></button>
               </div>
@@ -108,7 +108,7 @@
       <tbody>
         <tr *ngIf="!total && !isLoading">
           <td colspan="10">
-            <p class="text-center text-danger">Nu există date..</p>
+            <p class="text-center text-danger">Nu exista date..</p>
           </td>
         </tr>
         <tr *ngFor="let item of items, let i = index">

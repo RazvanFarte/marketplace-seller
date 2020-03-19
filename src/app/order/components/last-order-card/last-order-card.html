@@ -7,7 +7,7 @@
           <tr>
             <th colspan="2">Comanda</th>
             <th>Stare</th>
-            <th>Preț total</th>
+            <th>Pret total</th>
             <th>Creat la</th>
           </tr>
         </thead>
@@ -27,12 +27,12 @@
               <small class="text-muted">Cod: {{item?.trackingCode}}</small>
             </td>
             <td>
-              <span class="label label-success" *ngIf="item?.status === 'completed'">Completată</span>
-              <span class="label label-primary" *ngIf="item?.status === 'shipping'">În curs de livrare</span>
-              <span class="label label-warning" *ngIf="item?.status === 'pending'">în așteptare</span>
-              <span class="label label-info" *ngIf="item?.status === 'progressing'">În progres</span>
-              <span class="label label-danger" *ngIf="item?.status === 'refunded'">Returnată</span>
-              <span class="label label-danger" *ngIf="item?.status === 'cancelled'">Anulată</span>
+              <span class="label label-success" *ngIf="item?.status === 'completed'">Completata</span>
+              <span class="label label-primary" *ngIf="item?.status === 'shipping'">In curs de livrare</span>
+              <span class="label label-warning" *ngIf="item?.status === 'pending'">in asteptare</span>
+              <span class="label label-info" *ngIf="item?.status === 'progressing'">In progres</span>
+              <span class="label label-danger" *ngIf="item?.status === 'refunded'">Returnata</span>
+              <span class="label label-danger" *ngIf="item?.status === 'cancelled'">Anulata</span>
             </td>
             <td>{{item?.totalPrice | currency}}</td>
             <td>{{item?.createdAt | date:'short'}}</td>

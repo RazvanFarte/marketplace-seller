@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Actualizează variantă produs</h4>
+  <h4 class="modal-title">Actualizeaza varianta produs</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Close')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -9,20 +9,20 @@
     <div class="row">
       <div class="col-md-12" *ngIf="product.type === 'digital'">
         <div class="form-group">
-          <label>Fișier digital <media-select (onSelect)="selectMedia($event)"></media-select></label>
+          <label>Fisier digital <media-select (onSelect)="selectMedia($event)"></media-select></label>
           <img src="assets/images/media-exist.png" width="45px" *ngIf="item.digitalFileId">
           <img src="assets/images/nofile-available.png" width="45px" *ngIf="!item.digitalFileId">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Preț</label>
+          <label>Pret</label>
           <input type="number" class="form-control" name="price" placeholder="100" [(ngModel)]="item.price" />
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Preț vânzare</label>
+          <label>Pret vanzare</label>
           <input type="number" class="form-control" name="salePrice" placeholder="100" [(ngModel)]="item.salePrice" />
         </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="col-md-12">
         <div class="form-group">
           <label>&nbsp;</label>
-          <button type="submit" class="btn btn-primary">Actualizează</button>
+          <button type="submit" class="btn btn-primary">Actualizeaza</button>
         </div>
       </div>
     </div>

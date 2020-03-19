@@ -4,7 +4,7 @@
       <div class="row" [hidden]="!paymentGateway.stripe.enable && !paymentGateway.paypal.enable">
         <div class="col-sm-12">
           <div class="form-group">
-            <label translate>Metodă Plată </label>
+            <label translate>Metoda Plata </label>
             <p>
               <label class="form-check-inline" [hidden]="!paymentGateway.paypal.enable">
                 <input class="form-check-input" type="radio" name="mode" [value]="'paypal'" [(ngModel)]="userInfo.paymentMethod">
@@ -21,7 +21,7 @@
         <div class="col-sm-12" *ngIf="userInfo.paymentMethod === 'stripe'">
           <div [formGroup]="stripeTest">
             <div class="form-group">
-              <label translate>Deținător card </label>
+              <label translate>Detinator card </label>
               <input type="text" formControlName="cardName" placeholder="Jane Doe" class="form-control" name="cardHolderName" />
             </div>
             <div class="form-group">
@@ -37,11 +37,11 @@
               <span *ngIf="packagePrice">{{packageName}}</span>
             </p>
             <p>
-              <strong translate>Durată: </strong>
+              <strong translate>Durata: </strong>
               <span class="badge badge-warning" *ngIf="packagePrice">{{packageDuration}} Zile</span>
             </p>
             <p>
-              <strong translate>Preț: </strong>
+              <strong translate>Pret: </strong>
               <span class="badge badge-danger" *ngIf="packagePrice">{{packagePrice | currency}}</span>
             </p>
           </div>
@@ -50,18 +50,18 @@
       <div class="row">
         <div class="col-sm-12" [hidden]="paymentGateway.stripe.enable || paymentGateway.paypal.enable">
           <div class="form-group text-center">
-            <h1 class="display-3">Ne pare rău!</h1>
-            <p class="lead">Systemul nu are configurate modalități de plată.</p>
-            <p class="lead">Vă rugăm reveniți mai târziu!</p>
+            <h1 class="display-3">Ne pare rau!</h1>
+            <p class="lead">Systemul nu are configurate modalitati de plata.</p>
+            <p class="lead">Va rugam reveniti mai tarziu!</p>
           </div>
         </div>
         <div class="col-sm-12">
           <hr>
           <p class="text-right">
-            <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Anulează</button>
+            <button class="btn btn-warning" (click)="activeModal.close('Cancel')" translate>Anuleaza</button>
             &nbsp;
             <button [hidden]="!paymentGateway.stripe.enable && !paymentGateway.paypal.enable" class="btn btn-warning"
-              type="submit" translate>Finalizare comandă</button>
+              type="submit" translate>Finalizare comanda</button>
           </p>
         </div>
       </div>

@@ -5,10 +5,10 @@
         <div class="col-md-12">
           <div class="nav flex-column nav-pills nav-top-cus" role="tablist" aria-orientation="vertical">
             <a class="nav-link" data-toggle="tab" role="tab" aria-controls="home" aria-selected="true" [ngClass]="{active: tab == 'info'}"
-              (click)="changeTab('info')">Informații</a>
+              (click)="changeTab('info')">Informatii</a>
 
             <a class="nav-link" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false" [ngClass]="{active: tab == 'spec'}"
-              (click)="changeTab('spec')">Specificații</a>
+              (click)="changeTab('spec')">Specificatii</a>
 
             <a class="nav-link" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="false" [ngClass]="{active: tab == 'images'}"
               (click)="changeTab('images')">Imagini</a>
@@ -39,9 +39,9 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Alias</label>
-                    <input type="text" name="alias" class="form-control" placeholder="fără spații sau caractere speciale, URL Produs (link-ul produsului afisat) pentru SEO"
+                    <input type="text" name="alias" class="form-control" placeholder="fara spatii sau caractere speciale, URL Produs (link-ul produsului afisat) pentru SEO"
                       [(ngModel)]="product.alias" />
-                    <small class="text-muted">Dacă alias există, atunci sistemul va adăuga caractere la întâmplare la finalul numelui</small>
+                    <small class="text-muted">Daca alias exista, atunci sistemul va adauga caractere la intamplare la finalul numelui</small>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group" *ngIf="product.type === 'digital'">
-                    <label style="width:100%">Calea spre fișierul digital </label>
+                    <label style="width:100%">Calea spre fisierul digital </label>
                     <file-upload [options]="fileOptions"></file-upload>
                     <div *ngIf="product.type === 'digital' && product.digitalFileId">
                       <img src="assets/images/file-exist.jpg" *ngIf="fileType === 'file'" width="45px">
@@ -63,7 +63,7 @@
                       <img src="assets/images/pdf-icon.png" *ngIf="fileType === 'pdf'" width="45px">
                       <img src="assets/images/rar-exist.png" *ngIf="fileType === 'rar'" width="45px">
                       <span *ngIf="product.type === 'digital' && product.digitalFileId && product.digitalFile">
-                        Tip fișier (mime): {{product?.digitalFile?.mimeType}}
+                        Tip fisier (mime): {{product?.digitalFile?.mimeType}}
                       </span>
                     </div>
                     <img src="assets/images/nofile-available.png" width="45px" *ngIf="product.type === 'digital' && !product.digitalFileId">
@@ -84,42 +84,42 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Preț (*)</label>
+                    <label>Pret (*)</label>
                     <input type="number" name="price" min="0.1" class="form-control" [(ngModel)]="product.price" required #price="ngModel"/>
                     <div *ngIf="price.errors && (price.dirty || price.touched || isSubmitted)">
                       <p [hidden]="!price.errors.required" class="required-text">
-                        Preț obligatoriu
+                        Pret obligatoriu
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Preț vânzare (*)</label>
+                    <label>Pret vanzare (*)</label>
                     <input type="number" name="salePrice" class="form-control" [(ngModel)]="product.salePrice" min="0.1" required #salePrice="ngModel"/>
                     <div *ngIf="salePrice.errors && (salePrice.dirty || salePrice.touched || isSubmitted)">
                       <p [hidden]="!salePrice.errors.required" class="required-text">
-                        Preț vânzare obligatoriu
+                        Pret vanzare obligatoriu
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Nume taxă</label>
-                    <input type="text" name="taxClass" class="form-control" placeholder="TVA, Taxe vânzare,..." [(ngModel)]="product.taxClass" />
+                    <label>Nume taxa</label>
+                    <input type="text" name="taxClass" class="form-control" placeholder="TVA, Taxe vanzare,..." [(ngModel)]="product.taxClass" />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Tip taxă (%)</label>
+                    <label>Tip taxa (%)</label>
                     <input type="number" name="taxValue" class="form-control" placeholder="10" [(ngModel)]="product.taxPercentage" />
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Restricție cod-uri ZIP</label>
-                    <ng-select bindValue="label" placeholder="Introdu restricție cod-uri ZIP"  name="restrictCODAreas" [items]="[]" [addTag]="true" [multiple]="true" [isOpen]="false" [(ngModel)]="product.restrictCODAreas">
+                    <label>Restrictie cod-uri ZIP</label>
+                    <ng-select bindValue="label" placeholder="Introdu restrictie cod-uri ZIP"  name="restrictCODAreas" [items]="[]" [addTag]="true" [multiple]="true" [isOpen]="false" [(ngModel)]="product.restrictCODAreas">
                     </ng-select>
                   </div>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>MPN</label>
-                    <input type="text" name="mpn" placeholder="Cod producător" class="form-control"
+                    <input type="text" name="mpn" placeholder="Cod producator" class="form-control"
                       [(ngModel)]="product.mpn" />
                   </div>
                 </div>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Descriere scurtă</label>
+                    <label>Descriere scurta</label>
                     <textarea class="form-control" name="productsdesc" placeholder="Introdu text" [(ngModel)]="product.shortDescription"></textarea>
                   </div>
                 </div>
@@ -200,7 +200,7 @@
                 </div>
                 <div class="col-md-12">
                   <hr>
-                  <h4>Introdu zip code sau selectează zonele de livrare gratuită.</h4>
+                  <h4>Introdu zip code sau selecteaza zonele de livrare gratuita.</h4>
                   <span *ngFor="let item of freeShipAreas; let i = index" class="label label-warning position-relative">
                     {{item.areaType}}: {{item.name ? item.name : item.value}}<a (click)="removeArea(item,i)" class="remove-item">x</a>
                   </span>
@@ -215,7 +215,7 @@
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
-                    <label>Livrare gratuită în țara</label>
+                    <label>Livrare gratuita in tara</label>
                     <select [(ngModel)]="freeCountry" class="form-control" name="freeCountry" (change)="loadStates(freeCountry.isoCode)">
                       <option *ngFor="let item of countries" [ngValue]="item">{{item.name}}</option>
                     </select>
@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
-                    <label>Livrare gratuită în județul</label>
+                    <label>Livrare gratuita in judetul</label>
                     <select [(ngModel)]="freeState" class="form-control" name="freeCountry" (change)="loadCities(freeState._id)">
                       <option *ngFor="let item of states" [ngValue]="item">{{item.name}}</option>
                     </select>
@@ -231,15 +231,15 @@
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
-                    <label>Livrare gratuită în orașul</label>
-                    <select [(ngModel)]="freeOraș" class="form-control" name="freeOraș">
+                    <label>Livrare gratuita in orasul</label>
+                    <select [(ngModel)]="freeOras" class="form-control" name="freeOras">
                       <option *ngFor="let item of cities" [ngValue]="item">{{item.name}}</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-2">
                   <label style="width: 100%">&nbsp;</label>
-                  <div class="btn btn-success" (click)="addFreeShipAreas()">Adăuga</div>
+                  <div class="btn btn-success" (click)="addFreeShipAreas()">Adauga</div>
                 </div>
               </div>
               <div class="row">
@@ -253,7 +253,7 @@
                     </div>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" name="freeShip" [(ngModel)]="product.freeShip" /> Livrare gratuită oriunde
+                        <input type="checkbox" name="freeShip" [(ngModel)]="product.freeShip" /> Livrare gratuita oriunde
                       </label>
                     </div>
                     <div class="form-check">
@@ -267,7 +267,7 @@
                   <hr />
                   <div class="form-group">
                     <div class="checkbox">
-                      <label>Expiră la (fus orar GMT): <span class="label label-info" *ngIf="product.dealTo">{{product?.dealTo
+                      <label>Expira la (fus orar GMT): <span class="label label-info" *ngIf="product.dealTo">{{product?.dealTo
                           | date:'dd/MM/yyyy'}}</span></label>
                       <div class="row">
                         <ngb-datepicker [(ngModel)]="dealDate" name="dealTo" (select)="updateDealTime()"></ngb-datepicker>
@@ -283,7 +283,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Specificații</label>
+                  <label>Specificatii</label>
                   <table class="table">
                     <tbody class="sortable" [sortablejs]="product.specifications">
                       <tr *ngFor="let c of product.specifications; let i = index">
@@ -303,15 +303,15 @@
                     <tfoot>
                       <tr>
                         <td>
-                          <input type="text" class="form-control" placeholder="Introdu tip specificație" name="newSpec"
+                          <input type="text" class="form-control" placeholder="Introdu tip specificatie" name="newSpec"
                             [(ngModel)]="newSpecification.key" />
                         </td>
                         <td>
                           <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Introdu valoare specificație" name="newChemicalValue"
+                            <input type="text" class="form-control" placeholder="Introdu valoare specificatie" name="newChemicalValue"
                               [(ngModel)]="newSpecification.value" />
                             <div class="input-group-append">
-                              <button class="btn btn-outline-secondary" type="button" (click)="addSpecification()">Adaugă</button>
+                              <button class="btn btn-outline-secondary" type="button" (click)="addSpecification()">Adauga</button>
                             </div>
                           </div>
                         </td>
@@ -325,7 +325,7 @@
           </div>
 
           <div class="tab-pane" role="tabpanel" [ngClass]="{'show active': tab === 'images', hide: tab !== 'images'}">
-            <h3>Click pentru a adăuga imaginea principală.</h3>
+            <h3>Click pentru a adauga imaginea principala.</h3>
             <div class="row">
               <div class="col-md-3 text-center" *ngFor="let media of images; let i = index">
                 <img class="img-thumbnail" [src]="media.thumbUrl" [ngClass]="{selected: media._id === mainImage}" />
@@ -348,7 +348,7 @@
           <div class="tab-pane" role="tabpanel" [ngClass]="{'show active': tab === 'catalogs', hide: tab !== 'catalogs'}">
             <product-variants [product]="product" *ngIf="product?._id"></product-variants>
             <div class="alert" *ngIf="!product?._id">
-              Crează un produs și pe urmă adaugă variante pentru acesta.
+              Creaza un produs si pe urma adauga variante pentru acesta.
             </div>
           </div>
 

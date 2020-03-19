@@ -43,12 +43,12 @@
               </div>
               <div class="col col-md-4">
                 <div class="form-group">
-                  <label>Limită (*)</label>
+                  <label>Limita (*)</label>
                   <input type="number" name="limit" min="0" #limit="ngModel" class="form-control" required [(ngModel)]="coupon.limit" />
-                  <small class="text-muted">Dacă introduceți 0, înseamnă utilizare nelimitată</small>
+                  <small class="text-muted">Daca introduceti 0, inseamna utilizare nelimitata</small>
                   <div *ngIf="limit.errors && (limit.dirty || limit.touched || isSubmitted)">
                     <p [hidden]="!limit.errors.required" class="required-text">
-                      Introdu limită cupon
+                      Introdu limita cupon
                     </p>
                   </div>
                 </div>

@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3"><a class="btn btn-danger" (click)="exportCSV()">Exportează date</a></div>
+      <div class="col-md-3"><a class="btn btn-danger" (click)="exportCSV()">Exporteaza date</a></div>
     </div>
     <table class="table table-custom">
       <thead>
@@ -33,9 +33,9 @@
               <a (click)="sortBy('productDetails.name', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
-          <th>Variantă</th>
+          <th>Varianta</th>
           <th>
-            <a (click)="sortBy('productPrice', 'desc')">Preț&nbsp;</a>
+            <a (click)="sortBy('productPrice', 'desc')">Pret&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='productPrice'">
               <a (click)="sortBy('productPrice', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('productPrice', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -56,7 +56,7 @@
             </span>
           </th>
           <th class="min-w-150">
-            <a (click)="sortBy('shippingPrice', 'desc')">Preț<br> livrare&nbsp;</a>
+            <a (click)="sortBy('shippingPrice', 'desc')">Pret<br> livrare&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='shippingPrice'">
               <a (click)="sortBy('shippingPrice', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('shippingPrice', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -70,14 +70,14 @@
             </span>
           </th>
           <th class="min-w-150">
-            <a (click)="sortBy('commission', 'desc')">Comision - Preț&nbsp;</a>
+            <a (click)="sortBy('commission', 'desc')">Comision - Pret&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='commission'">
               <a (click)="sortBy('commission', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('commission', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
           <th>
-            <a (click)="sortBy('balance', 'desc')">Balanță&nbsp;</a>
+            <a (click)="sortBy('balance', 'desc')">Balanta&nbsp;</a>
             <span *ngIf="sortOption.sortBy=='balance'">
               <a (click)="sortBy('balance', 'asc')" *ngIf="sortOption.sortType=='desc'"><i class="fa fa-caret-down"></i></a>
               <a (click)="sortBy('balance', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
@@ -115,24 +115,24 @@
               <a (click)="sortBy('createdAt', 'desc')" *ngIf="sortOption.sortType=='asc'"><i class="fa fa-caret-up"></i></a>
             </span>
           </th>
-          <th>Acțiune</th>
+          <th>Actiune</th>
         </tr>
         <tr>
           <th colspan="9"></th>
           <th>
             <select [(ngModel)]="searchFields.status" (change)="query()">
               <option value="" selected>Toate</option>
-              <option value="completed">Completată</option>
-              <option value="shipping">În curs de livrare</option>
-              <option value="pending">în așteptare</option>
-              <option value="progressing">În progres</option>
-              <option value="refunded">Returnată</option>
-              <option value="cancelled">Anulată</option>
+              <option value="completed">Completata</option>
+              <option value="shipping">In curs de livrare</option>
+              <option value="pending">in asteptare</option>
+              <option value="progressing">In progres</option>
+              <option value="refunded">Returnata</option>
+              <option value="cancelled">Anulata</option>
             </select>
           </th>
           <th colspan="3"></th>
           <th>
-            <a class="btn btn-success" (click)="query()">Caută</a>
+            <a class="btn btn-success" (click)="query()">Cauta</a>
           </th>
         </tr>
       </thead>
@@ -159,12 +159,12 @@
           <td>{{item?.commissionRate *100}}% - {{item?.commission | currency}}</td>
           <td>{{item?.balance | currency}}</td>
           <td>
-            <span class="label label-success" *ngIf="item?.status === 'completed'">Completată</span>
-            <span class="label label-primary" *ngIf="item?.status === 'shipping'">În curs de livrare</span>
-            <span class="label label-warning" *ngIf="item?.status === 'pending'">în așteptare</span>
-            <span class="label label-info" *ngIf="item?.status === 'progressing'">În progres</span>
-            <span class="label label-danger" *ngIf="item?.status === 'refunded'">Returnată</span>
-            <span class="label label-danger" *ngIf="item?.status === 'cancelled'">Anulată</span>
+            <span class="label label-success" *ngIf="item?.status === 'completed'">Completata</span>
+            <span class="label label-primary" *ngIf="item?.status === 'shipping'">In curs de livrare</span>
+            <span class="label label-warning" *ngIf="item?.status === 'pending'">in asteptare</span>
+            <span class="label label-info" *ngIf="item?.status === 'progressing'">In progres</span>
+            <span class="label label-danger" *ngIf="item?.status === 'refunded'">Returnata</span>
+            <span class="label label-danger" *ngIf="item?.status === 'cancelled'">Anulata</span>
           </td>
           <td>{{item?.trackingCode}}</td>
           <td>

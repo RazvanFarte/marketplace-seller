@@ -27,34 +27,34 @@
                     Adresa de email e obligatorie.
                   </p>
                   <p [hidden]="!email.errors.pattern" class="required-text">
-                    Introdu adresă de email validă.
+                    Introdu adresa de email valida.
                   </p>
                 </div>
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Numărul de telefon</label>
+                <label>Numarul de telefon</label>
                 <input type="text" class="form-control" [(ngModel)]="info.phoneNumber" name="phone" />
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Adresă</label>
+                <label>Adresa</label>
                 <input type="text" class="form-control" [(ngModel)]="info.address" name="address" />
               </div>
             </div>
             <div class="col col-md-6">
               <div class="form-group">
-                <label>Parolă (*)</label>
+                <label>Parola (*)</label>
                 <input type="password" class="form-control" [(ngModel)]="info.password" name="password" #password="ngModel" minlength="6" />
                 <div *ngIf="password.errors && (password.dirty || password.touched || isSubmitted)">
                   <p [hidden]="!password.errors.minlength" class="required-text">
-                    Parolă trebuie să conțină cel puțin 6 caractere!
+                    Parola trebuie sa contina cel putin 6 caractere!
                   </p>
                 </div>
                 <p class="help help-block">
-                  <small>Lasă câmpul gol pentru a păstra parola curentă</small>
+                  <small>Lasa campul gol pentru a pastra parola curenta</small>
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@
             </div>
             <div class="col col-md-12">
               <div class="form-group">
-                <button type="button" class="btn btn-primary" (click)="complain()">Plângere</button>
+                <button type="button" class="btn btn-primary" (click)="complain()">Plangere</button>
                 &nbsp;
-                <button class="btn btn-primary" type="submit">Salvează</button>
+                <button class="btn btn-primary" type="submit">Salveaza</button>
               </div>
             </div>
           </div>
