@@ -52,7 +52,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <input class="form-control" placeholder="Confirmare Parola" required type="password" autocomplete="off" name="confirmPwd"
-              [(ngModel)]="confirmParola" #confirmPwd="ngModel" />
+              [(ngModel)]="confirmPassword" #confirmPwd="ngModel" />
             <div *ngIf="confirmPwd.errors && (confirmPwd.dirty || confirmPwd.touched || submitted)">
               <p [hidden]="!confirmPwd.errors.required" class="error">
                 Confirmare parola obligatorie
