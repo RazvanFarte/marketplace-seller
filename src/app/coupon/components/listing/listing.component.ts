@@ -51,7 +51,7 @@ export class CouponsComponent implements OnInit {
       this.utilService.setLoading(false);
       this.isLoading = false;
     }).catch((err) => {
-      this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!';
+      this.toasty.error(err.data.message || 'Ceva nu a mers, va rugam sa incercati din nou!');
       this.utilService.setLoading(false);
       this.isLoading = false;
     });
